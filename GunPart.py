@@ -1,40 +1,37 @@
-import enum
 import hou
-
-class GPType(enum.Enum):
-    BRRL = 1
-    TRGR_GRD = 2
-    TRGR =3
-    GRIP = 4
-    MGZN = 5
-    MGWL = 6
-    HDGRD = 8
-    CHMBR = 9
-    MZZL = 10
-    CRRY_HNDLE = 11
-    REAR_SGHT = 12
-    FRNT_SGHT = 13
-    BFFR_TUBE = 14
-    CHRG_HNDLE = 15
-    STCK = 16
-    BUTT_PLT = 17
-    RCVR = 18
 
 
 class gunpart():
 
-    def __init__(self, name, GPType):
+    def __init__(self, name, GPType,  index):
 
-        name = name
-        nodeType = "Jason_GunPart"
-        GPType = GPType
-        node = None
-        container = name+"_CONTAINER"
+
+        self.name = name + "_" + str(index+1)
+        self.parmPrefix = GPType.name + str(index+1)
+        self.nodeType = "Jason_GunPart"
+        self.GPType = GPType
+        self.node = None
+        self.containerName = name+"_CONTAINER"
+        self.container = None
 
 
     def createGunpartNode(self):
+        #print(self.containerName)
         HDA = hou.pwd()
-        HDA.node(self.container).createNode(self.nodeType, self.name)
+        geoContainer = HDA.node("GEO_CONTAINER")
+        inputGeoContainer1 = geoContainer.indirectInputs()[0]
+        self.container = geoContainer.node(self.containerName)
+        if self.container == None:
+            self.container = geoContainer.createNode("subnet", self.containerName)
+            self.container.setInput(0, inputGeoContainer1)
+            self.container.moveToGoodPosition()
+        input1 = self.container.indirectInputs()[0]
+        gunpartNode = self.container.createNode(self.nodeType, self.name)
+        gunpartNode.setInput(0, input1)
+        gunpartNode.moveToGoodPosition()
+        print("Created: " + gunpartNode.name())
+        return gunpartNode
+
 
 
 

@@ -1,4 +1,12 @@
 import hou
+import enum
+
+class shapeType(enum.Enum):
+    C = 0   #Cylindrical
+    F = 1   #Flat
+
+shapeTypeNiceNames = {shapeType.C : "Cylindrical",
+                      shapeType.F : "Flat"}
 
 
 class gunpart():
@@ -6,13 +14,15 @@ class gunpart():
     def __init__(self, name, GPType,  index):
 
 
-        self.name = name + "_" + str(index+1)
+        self.name = name + str(index+1)
         self.parmPrefix = GPType.name + str(index+1)
         self.nodeType = "Jason_GunPart"
         self.GPType = GPType
         self.node = None
         self.containerName = name+"_CONTAINER"
         self.container = None
+        self.shapeType = None
+        self.validLayerName = ""
 
 
     def createGunpartNode(self):
@@ -30,30 +40,35 @@ class gunpart():
         gunpartNode.setInput(0, input1)
         gunpartNode.moveToGoodPosition()
         print("Created: " + gunpartNode.name())
+        self.node = gunpartNode
         return gunpartNode
 
+    def setValidLayerName(self):
+        try:
+            self.validLayerName= self.node.globParms("*layer_name1")[0].evalAsString()
+            #print(self.name + "'s ValidLayerName is: " + self.validLayerName)
+        except:
+            pass
 
 
 
-'''
-barrel = gunpart("Barrel", GPType.BRRL)
-triggerGuard = gunpart("Trigger_Guard", GPType.TRGR_GRD)
-trigger = gunpart("Trigger", GPType.TRGR)
-grip = gunpart("Grip", GPType.GRIP)
-magazine = gunpart("Magazine", GPType.MGZN)
-magwell = gunpart("Magwell", GPType.MGWL)
-handguard = gunpart("Handguard", GPType.HDGRD)
-chamber = gunpart("Chamber", GPType.CHMBR)
-muzzle = gunpart("Muzzle", GPType.MZZL)
-carryingHandle = gunpart("Carrying_Handle", GPType.CRRY_HNDLE)
-rearSight = gunpart("Rear Sight", GPType.REAR_SGHT)
-frontSight = gunpart("Front_Sight", GPType.FRNT_SGHT)
-bufferTube = gunpart("Buffer_Tube", GPType.BFFR_TUBE)
-chargingHandle = gunpart("Charging_Handle", GPType.CHRG_HNDLE)
-stock = gunpart("Stock", GPType.STCK)
-buttplate = gunpart("Butt_Plate", GPType.BUTT_PLT)
-receiver = gunpart  ("Receiver", GPType.RCVR)
-'''
+    def setShapeType(self):
+        if self.validLayerName == "":
+            self.setValidLayerName()
+
+        shapeSuffix = self.validLayerName.split("_")[-1]
+        try:
+            self.shapeType = shapeType[shapeSuffix]
+            #print(self.validLayerName + "'s Shape Type is: " + self.shapeType.name)
+            print("Setting " + self.validLayerName + "/" + self.node.name() + " to " + shapeTypeNiceNames[self.shapeType])
+            self.node.parm("shpSwitch").set(self.shapeType.value)
+        except:
+            print("ERROR: " + self.validLayerName + "/" + self.node.name() + " ShapeType Setting failed, Check LayerName Conventions; [gunPart]#_[shapeType]")
+
+
+
+
+
 
 
 

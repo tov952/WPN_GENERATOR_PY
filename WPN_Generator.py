@@ -1,9 +1,10 @@
 import sys
 import hou
+from WPN_GENERATOR_PY import WPN_Enums
+from WPN_GENERATOR_PY import WPN_Utils
 
 sys.path.append(r"E:\Users\Jason\Documents\houdini18.5\python3.7libs\WPN_GENERATOR_PY\venv\Lib\site-packages")
 
-import enum
 from WPN_GENERATOR_PY import GunPart
 from WPN_GENERATOR_PY import gunPartParmTemplates as GPpT
 
@@ -14,48 +15,7 @@ GEO_CONTAINER = "GEO_CONTAINER"
 
 debug = False
 
-
-
-class GPTypes(enum.Enum):
-    BRRL = 1
-    TRGR_GRD = 2
-    TRGGR = 3
-    GRIP = 4
-    MGZN = 5
-    MGWL = 6
-    HDGRD = 8
-    CHMBR = 9
-    MZZL = 10
-    CRRY_HNDLE = 11
-    REAR_SGHT = 12
-    FRNT_SGHT = 13
-    BFFR_TUBE = 14
-    CHRG_HNDLE = 15
-    STCK = 16
-    BUTT_PLT = 17
-    RCVR = 18
-
-
-GPTypesNiceName = {GPTypes.BRRL: "Barrel",
-                   GPTypes.TRGR_GRD: "TriggerGuard",
-                   GPTypes.TRGGR: "Trigger",
-                   GPTypes.GRIP: "Grip",
-                   GPTypes.MGZN: "Magazine",
-                   GPTypes.MGWL: "Magwell",
-                   GPTypes.HDGRD: "Handguard",
-                   GPTypes.CHMBR: "Chamber",
-                   GPTypes.MZZL: "Muzzle",
-                   GPTypes.CRRY_HNDLE: "CarryingHandle",
-                   GPTypes.REAR_SGHT: "RearSight",
-                   GPTypes.FRNT_SGHT: "FrontSight",
-                   GPTypes.BFFR_TUBE: "BufferTube",
-                   GPTypes.CHRG_HNDLE: "ChargingHandle",
-                   GPTypes.STCK: "Stock",
-                   GPTypes.BUTT_PLT: "ButtPlate",
-                   GPTypes.RCVR: "Receiver"}
-
 gunPartList = []   #Stores instances of generated gunparts
-
 
 
 def rebuild(this_node):
@@ -95,12 +55,7 @@ def SetValidLayerName(this_node, validPSDLayerNames):
             print("ERROR: Setting " + noShapeName + "_layer_name1 failed, Check LayerName Conventions; [gunPart]#_[shapeType]")
 
 
-def getAllGunPartNodes(this_node, validPSDLayerNames):
-    gunPartNodes = []
-    for validPSDLayerNames in validPSDLayerNames:
-        gunPartNodeName = getNoShapeSuffixName(validPSDLayerNames)
-        gunPartNodes.append(this_node.recursiveGlob(gunPartNodeName))
-    return gunPartNodes
+
 
 def genGunPartNodes(geoContainer, this_node):
     # Gen Gunpart Nodes as needed
@@ -124,10 +79,7 @@ def genGunPartNodes(geoContainer, this_node):
     for child in geoContainer.children():
         child.layoutChildren()
 
-def setParms(gunPartNode, targetValueDict):
-    for targetParm, value in targetValueDict.items():
-        gunPartNode.parm(targetParm).set(value)
-        print(targetParm + " set to " + str((value)))
+
 
 
 
@@ -144,7 +96,7 @@ def buildParmTemplates(this_node, validPSDLayerNames):
         #print(noShapeName)
         folderName = "numOf_" + noShapeName
         #print("ValidLayerName is:" + validLayerName)
-        parmFolderTemplate = GPpT.genGunpartParmTemplates(noShapeName,GPTypesNiceName[GPTypes[noShapeName]], validLayerName)
+        parmFolderTemplate = GPpT.genGunpartParmTemplates(noShapeName, GPTypesNiceName[GPTypes[noShapeName]], validLayerName)
         # print(this_node.parms())
         if len(this_node.globParms(folderName)) < 1:
             this_node.addSpareParmTuple(parmFolderTemplate)
@@ -154,22 +106,6 @@ def buildParmTemplates(this_node, validPSDLayerNames):
 
         # print(GPTypes[nonDigitName])
         #print(GPTypesNiceName[GPTypes[nonDigitName]])
-
-
-def getCleanName(name):
-    nonDigitName = getNonDigitName(name)
-    noShapeName = getNoShapeSuffixName(nonDigitName)
-    return noShapeName
-
-
-def getNonDigitName(name):
-    nonDigitName = ''.join([i for i in name if not i.isdigit()])
-    return nonDigitName
-
-
-def getNoShapeSuffixName(name):
-    noShapeName = "_".join(name.split("_")[0:-1])
-    return noShapeName
 
 
 def getValidPSDLayerNames(this_node):
@@ -217,15 +153,6 @@ def getValidPSDLayerNames(this_node):
     #print(list(set(validLayerNames)))
     return list(set(validLayerNames)), layerNameCountDict
 
-
-def linkExpressionSTR(parmSource, force_evaluate=False, string=False):
-    ch = "ch"
-    if force_evaluate == True:
-        ch = "`ch"
-    if string == True:
-        ch += "s"
-    #print(ch + "('../../../" + parmSource + "')")
-    return ch + "('../../../" + parmSource + "')"
 
 
 def linkParms(this_node, gunPartNode, gunPartPrefix):

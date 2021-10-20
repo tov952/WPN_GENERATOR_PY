@@ -1,12 +1,6 @@
 import hou
-import enum
 
-class shapeType(enum.Enum):
-    C = 0   #Cylindrical
-    F = 1   #Flat
-
-shapeTypeNiceNames = {shapeType.C : "Cylindrical",
-                      shapeType.F : "Flat"}
+from WPN_GENERATOR_PY import WPN_Enums
 
 
 class gunpart():

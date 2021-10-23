@@ -52,9 +52,9 @@ class gunpart():
 
         shapeSuffix = self.validLayerName.split("_")[-1]
         try:
-            self.shapeType = shapeType[shapeSuffix]
+            self.shapeType = WPN_Enums.shapeType[shapeSuffix]
             #print(self.validLayerName + "'s Shape Type is: " + self.shapeType.name)
-            print("Setting " + self.validLayerName + "/" + self.node.name() + " to " + shapeTypeNiceNames[self.shapeType])
+            print("Setting " + self.validLayerName + "/" + self.node.name() + " to " + WPN_Enums.shapeTypeNiceNames[self.shapeType])
             self.node.parm("shpSwitch").set(self.shapeType.value)
         except:
             print("ERROR: " + self.validLayerName + "/" + self.node.name() + " ShapeType Setting failed, Check LayerName Conventions; [gunPart]#_[shapeType]")

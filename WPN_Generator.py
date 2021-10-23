@@ -47,7 +47,7 @@ def rebuild(this_node):
 
 def SetValidLayerName(this_node, validPSDLayerNames):
     for validLayerName in validPSDLayerNames:
-        noShapeName = getNoShapeSuffixName(validLayerName)
+        noShapeName = WPN_Utils.getNoShapeSuffixName(validLayerName)
         #print(noShapeName + "_layer_name1")
         try:
             this_node.parm(noShapeName + "_layer_name1").set(validLayerName)
@@ -59,7 +59,7 @@ def SetValidLayerName(this_node, validPSDLayerNames):
 
 def genGunPartNodes(geoContainer, this_node):
     # Gen Gunpart Nodes as needed
-    gpTypes = GPTypes
+    gpTypes = WPN_Enums.GPTypes
     for gpType in gpTypes:
         multiparm = this_node.parm("numOf_" + gpType.name)
         if multiparm != None:
@@ -72,7 +72,7 @@ def genGunPartNodes(geoContainer, this_node):
                 gunPartNode = gunPart.createGunpartNode()
                 gunPartList.append(gunPart)
                 #print(gunPartNode)
-                gunPartNode.parm("file").set(linkExpressionSTR("file", True, True))
+                gunPartNode.parm("file").set(WPN_Utils.linkExpressionSTR("file", True, True))
                 linkParms(this_node, gunPartNode, gunPart.parmPrefix)
 
     geoContainer.layoutChildren()
@@ -92,11 +92,11 @@ def SetMultiParmNums(layerNameCountDict, this_node):
 
 def buildParmTemplates(this_node, validPSDLayerNames):
     for validLayerName in validPSDLayerNames:
-        noShapeName = getCleanName(validLayerName)
+        noShapeName = WPN_Utils.getCleanName(validLayerName)
         #print(noShapeName)
         folderName = "numOf_" + noShapeName
         #print("ValidLayerName is:" + validLayerName)
-        parmFolderTemplate = GPpT.genGunpartParmTemplates(noShapeName, GPTypesNiceName[GPTypes[noShapeName]], validLayerName)
+        parmFolderTemplate = GPpT.genGunpartParmTemplates(noShapeName, WPN_Enums.GPTypesNiceName[WPN_Enums.GPTypes[noShapeName]], validLayerName)
         # print(this_node.parms())
         if len(this_node.globParms(folderName)) < 1:
             this_node.addSpareParmTuple(parmFolderTemplate)
@@ -112,7 +112,7 @@ def getValidPSDLayerNames(this_node):
     # Gets list of valid layers based on enum and not empty layers.
     filepath = this_node.parm("file").eval()
     psd = PSDImage.open(filepath)
-    gpTypesNames = [gpType.name for gpType in GPTypes]
+    gpTypesNames = [gpType.name for gpType in WPN_Enums.GPTypes]
     layerNames = []
     validLayerNames = []
     # print(gpTypesNames)
@@ -164,9 +164,9 @@ def linkParms(this_node, gunPartNode, gunPartPrefix):
         #print(parmTarget.parmTemplate().type())
         if parmTarget.parmTemplate().type() == hou.parmTemplateType.String:
             #print(parmTarget.parmTemplate().type)
-            parmTarget.set(linkExpressionSTR(parmSource.name(), True, True))
+            parmTarget.set(WPN_Utils.linkExpressionSTR(parmSource.name(), True, True))
         elif "crveShpProfile" in parmTarget.name():
             pass
         else:
-            parmTarget.setExpression(linkExpressionSTR(parmSource.name()))
+            parmTarget.setExpression(WPN_Utils.linkExpressionSTR(parmSource.name()))
     # print(gunPartParmsNameOnly)

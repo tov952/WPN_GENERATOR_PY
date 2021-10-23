@@ -1,2036 +1,419 @@
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/stdswitcher1 parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("stdswitcher1")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/xOrd parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("xOrd")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("srt")
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/rOrd parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("rOrd")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("xyz")
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/tx parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("tx")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(True)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/ty parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("ty")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(True)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/tz parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("tz")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(True)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/rx parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("rx")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(True)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/ry parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("ry")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(True)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/rz parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("rz")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(True)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/sx parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("sx")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(1)
-hou_parm.setAutoscope(True)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/sy parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("sy")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(1)
-hou_parm.setAutoscope(True)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/sz parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("sz")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(1)
-hou_parm.setAutoscope(True)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/px parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("px")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/py parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("py")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/pz parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("pz")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/prx parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("prx")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/pry parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("pry")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/prz parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("prz")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/scale parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("scale")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(1)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/pre_xform parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("pre_xform")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("clean")
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/keeppos parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("keeppos")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/childcomp parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("childcomp")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/constraints_on parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("constraints_on")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/constraints_path parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("constraints_path")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("")
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/lookatpath parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("lookatpath")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("")
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/lookupobjpath parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("lookupobjpath")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("")
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/lookup parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("lookup")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("on")
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/pathobjpath parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("pathobjpath")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("")
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/roll parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("roll")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/pos parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("pos")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/uparmtype parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("uparmtype")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("arc")
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/pathorient parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("pathorient")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(1)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/upx parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("upx")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/upy parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("upy")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(1)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/upz parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("upz")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/bank parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("bank")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/shop_materialpath parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("shop_materialpath")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("")
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/shop_materialopts parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("shop_materialopts")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("override")
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/tdisplay parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("tdisplay")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/display parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("display")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(1)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/use_dcolor parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("use_dcolor")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/dcolorr parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("dcolorr")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(1)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/dcolorg parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("dcolorg")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(1)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/dcolorb parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("dcolorb")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(1)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/picking parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("picking")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(1)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/pickscript parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("pickscript")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("")
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/caching parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("caching")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(1)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/vport_shadeopen parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("vport_shadeopen")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/vport_displayassubdiv parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("vport_displayassubdiv")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/vport_onionskin parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("vport_onionskin")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("off")
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/renderable parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("renderable")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(1)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/trcCTRLs parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("trcCTRLs")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/file parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("file")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("`chs('../../../file')")
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/reload parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("reload")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("0")
-hou_parm.setAutoscope(False)
-
-# Code for first keyframe.
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_reload')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for last keyframe.
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_reload')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_reload')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_reload')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/layer_name1 parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("layer_name1")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("`chs('../../../BRRL1_layer_name1')")
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/thresh1 parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("thresh1")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0.01)
-hou_parm.setAutoscope(False)
-
-# Code for first keyframe.
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_thresh1')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for last keyframe.
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_thresh1')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_thresh1')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_thresh1')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/step1 parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("step1")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0.52000000000000002)
-hou_parm.setAutoscope(False)
-
-# Code for first keyframe.
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_step1')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for last keyframe.
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_step1')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_step1')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_step1')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/genShpCTRLs parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("genShpCTRLs")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/shpSwitch parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("shpSwitch")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("0")
-hou_parm.setAutoscope(False)
-
-# Code for first keyframe.
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_shpSwitch')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for last keyframe.
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_shpSwitch')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_shpSwitch')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_shpSwitch')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/stdswitcher41 parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("stdswitcher41")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/viewportlod parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("viewportlod")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("full")
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/vm_rendervisibility parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("vm_rendervisibility")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("*")
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/vm_rendersubd parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("vm_rendersubd")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/vm_subdstyle parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("vm_subdstyle")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("mantra_catclark")
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/vm_subdgroup parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("vm_subdgroup")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("")
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/vm_osd_quality parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("vm_osd_quality")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(1)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/vm_osd_vtxinterp parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("vm_osd_vtxinterp")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(2)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/vm_osd_fvarinterp parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("vm_osd_fvarinterp")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(4)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/folder01 parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("folder01")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/categories parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("categories")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("")
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/reflectmask parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("reflectmask")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("*")
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/refractmask parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("refractmask")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("*")
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/lightmask parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("lightmask")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("*")
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/lightcategories parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("lightcategories")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("*")
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/vm_lpetag parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("vm_lpetag")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("")
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/vm_volumefilter parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("vm_volumefilter")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("box")
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/vm_volumefilterwidth parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("vm_volumefilterwidth")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(1)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/vm_matte parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("vm_matte")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/vm_rayshade parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("vm_rayshade")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/geo_velocityblur parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("geo_velocityblur")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("off")
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/geo_accelattribute parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("geo_accelattribute")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("accel")
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/vm_shadingquality parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("vm_shadingquality")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(1)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/vm_flatness parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("vm_flatness")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0.050000000000000003)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/vm_raypredice parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("vm_raypredice")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/vm_curvesurface parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("vm_curvesurface")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/vm_rmbackface parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("vm_rmbackface")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/shop_geometrypath parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("shop_geometrypath")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("")
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/vm_forcegeometry parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("vm_forcegeometry")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(1)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/vm_rendersubdcurves parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("vm_rendersubdcurves")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/vm_renderpoints parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("vm_renderpoints")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(2)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/vm_renderpointsas parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("vm_renderpointsas")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/vm_usenforpoints parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("vm_usenforpoints")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/vm_pointscale parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("vm_pointscale")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(1)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/vm_pscalediameter parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("vm_pscalediameter")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/vm_metavolume parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("vm_metavolume")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/vm_coving parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("vm_coving")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(1)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/vm_materialoverride parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("vm_materialoverride")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("compact")
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/vm_overridedetail parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("vm_overridedetail")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/vm_procuseroottransform parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("vm_procuseroottransform")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(1)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/cylCTRLs parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("cylCTRLs")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/scale2x parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("scale2x")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(1)
-hou_parm.setAutoscope(False)
-
-# Code for first keyframe.
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_scale2x')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for last keyframe.
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_scale2x')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_scale2x')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_scale2x')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/scale2y parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("scale2y")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(1)
-hou_parm.setAutoscope(False)
-
-# Code for first keyframe.
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_scale2y')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for last keyframe.
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_scale2y')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_scale2y')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_scale2y')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/scale2z parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("scale2z")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(1)
-hou_parm.setAutoscope(False)
-
-# Code for first keyframe.
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_scale2z')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for last keyframe.
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_scale2z')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_scale2z')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_scale2z')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/sides parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("sides")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(12)
-hou_parm.setAutoscope(False)
-
-# Code for first keyframe.
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_sides')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for last keyframe.
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_sides')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_sides')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_sides')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/WallThickness parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("WallThickness")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/flatCTRLs parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("flatCTRLs")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/zThickness parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("zThickness")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0.012)
-hou_parm.setAutoscope(False)
-
-# Code for first keyframe.
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_zThickness')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for last keyframe.
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_zThickness')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_zThickness')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_zThickness')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/xShpCTRLs parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("xShpCTRLs")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/crveShp parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("crveShp")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-# Code for first keyframe.
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_crveShp')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for last keyframe.
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_crveShp')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_crveShp')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_crveShp')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/xChamfer parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("xChamfer")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0.096000000000000002)
-hou_parm.setAutoscope(False)
-
-# Code for first keyframe.
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_xChamfer')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for last keyframe.
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_xChamfer')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_xChamfer')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_xChamfer')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/crveShpProfile parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("crveShpProfile")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(3)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/bvlCTRLs parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("bvlCTRLs")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/bvlFlatAngle parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("bvlFlatAngle")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(51.799999999999997)
-hou_parm.setAutoscope(False)
-
-# Code for first keyframe.
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_bvlFlatAngle')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for last keyframe.
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_bvlFlatAngle')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_bvlFlatAngle')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_bvlFlatAngle')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/bvlWidth parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("bvlWidth")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0.002)
-hou_parm.setAutoscope(False)
-
-# Code for first keyframe.
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_bvlWidth')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for last keyframe.
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_bvlWidth')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_bvlWidth')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-# Code for keyframe.
-hou_keyframe = hou.Keyframe()
-hou_keyframe.setTime(0)
-hou_keyframe.setValue(0)
-hou_keyframe.setInValue(0)
-hou_keyframe.useValue(False)
-hou_keyframe.setSlope(0)
-hou_keyframe.setInSlope(0)
-hou_keyframe.useSlope(False)
-hou_keyframe.setAccel(0)
-hou_keyframe.useAccel(False)
-hou_keyframe.interpretAccelAsRatio(False)
-hou_keyframe.setExpression("ch('../../../BRRL1_bvlWidth')", hou.exprLanguage.Hscript)
-hou_parm.setKeyframe(hou_keyframe)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/crveShpProfile1pos parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("crveShpProfile1pos")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/crveShpProfile1value parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("crveShpProfile1value")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/crveShpProfile1interp parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("crveShpProfile1interp")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("linear")
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/crveShpProfile2pos parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("crveShpProfile2pos")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(0.0066137565299868584)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/crveShpProfile2value parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("crveShpProfile2value")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(1)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/crveShpProfile2interp parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("crveShpProfile2interp")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("linear")
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/crveShpProfile3pos parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("crveShpProfile3pos")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(1)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/crveShpProfile3value parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("crveShpProfile3value")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set(1)
-hou_parm.setAutoscope(False)
-
-
-# Code for /obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1/crveShpProfile3interp parm 
-if locals().get("hou_node") is None:
-    hou_node = hou.node("/obj/Jason_proc_assault_rifle4/GEO_CONTAINER/BRRL_CONTAINER/BRRL1")
-hou_parm = hou_node.parm("crveShpProfile3interp")
-hou_parm.lock(False)
-hou_parm.deleteAllKeyframes()
-hou_parm.set("linear")
-hou_parm.setAutoscope(False)
-
-
+# Code for parameter template
+hou_parm_template = hou.FolderSetParmTemplate("stdswitcher", folder_names=(["","",""]), folder_type=hou.folderType.Tabs)
+# Code for parameter template
+hou_parm_template = hou.MenuParmTemplate("xOrd", "Transform Order", menu_items=(["srt","str","rst","rts","tsr","trs"]), menu_labels=(["Scale Rot Trans","Scale Trans Rot","Rot Scale Trans","Rot Trans Scale","Trans Scale Rot","Trans Rot Scale"]), default_value=0, icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal, menu_use_token=False, is_button_strip=False, strip_uses_icons=False)
+hou_parm_template.setJoinWithNext(True)
+# Code for parameter template
+hou_parm_template = hou.MenuParmTemplate("rOrd", "Rotate Order", menu_items=(["xyz","xzy","yxz","yzx","zxy","zyx"]), menu_labels=(["Rx Ry Rz","Rx Rz Ry","Ry Rx Rz","Ry Rz Rx","Rz Rx Ry","Rz Ry Rx"]), default_value=0, icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal, menu_use_token=False, is_button_strip=False, strip_uses_icons=False)
+hou_parm_template.hideLabel(True)
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("t", "Translate", 3, default_value=([0, 0, 0]), min=0, max=10, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.XYZW)
+hou_parm_template.setTags({"autoscope": "1111111111111111111111111111111", "script_action": "import objecttoolutils\nobjecttoolutils.matchTransform(kwargs, 0)", "script_action_help": "Select an object to match the translation with.", "script_action_icon": "BUTTONS_match_transform"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("t", "Translate", 3, default_value=([0, 0, 0]), min=0, max=10, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.XYZW)
+hou_parm_template.setTags({"autoscope": "1111111111111111111111111111111", "script_action": "import objecttoolutils\nobjecttoolutils.matchTransform(kwargs, 0)", "script_action_help": "Select an object to match the translation with.", "script_action_icon": "BUTTONS_match_transform"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("t", "Translate", 3, default_value=([0, 0, 0]), min=0, max=10, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.XYZW)
+hou_parm_template.setTags({"autoscope": "1111111111111111111111111111111", "script_action": "import objecttoolutils\nobjecttoolutils.matchTransform(kwargs, 0)", "script_action_help": "Select an object to match the translation with.", "script_action_icon": "BUTTONS_match_transform"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("r", "Rotate", 3, default_value=([0, 0, 0]), min=0, max=360, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.XYZW)
+hou_parm_template.setTags({"autoscope": "1111111111111111111111111111111", "script_action": "import objecttoolutils\nobjecttoolutils.matchTransform(kwargs, 1)", "script_action_help": "Select an object to match the rotation with.", "script_action_icon": "BUTTONS_match_rotation"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("r", "Rotate", 3, default_value=([0, 0, 0]), min=0, max=360, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.XYZW)
+hou_parm_template.setTags({"autoscope": "1111111111111111111111111111111", "script_action": "import objecttoolutils\nobjecttoolutils.matchTransform(kwargs, 1)", "script_action_help": "Select an object to match the rotation with.", "script_action_icon": "BUTTONS_match_rotation"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("r", "Rotate", 3, default_value=([0, 0, 0]), min=0, max=360, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.XYZW)
+hou_parm_template.setTags({"autoscope": "1111111111111111111111111111111", "script_action": "import objecttoolutils\nobjecttoolutils.matchTransform(kwargs, 1)", "script_action_help": "Select an object to match the rotation with.", "script_action_icon": "BUTTONS_match_rotation"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("s", "Scale", 3, default_value=([1, 1, 1]), min=0, max=10, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.XYZW)
+hou_parm_template.setTags({"autoscope": "1111111111111111111111111111111", "script_action": "import objecttoolutils\nobjecttoolutils.matchTransform(kwargs, 2)", "script_action_help": "Select an object to match the scale with.", "script_action_icon": "BUTTONS_match_scale"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("s", "Scale", 3, default_value=([1, 1, 1]), min=0, max=10, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.XYZW)
+hou_parm_template.setTags({"autoscope": "1111111111111111111111111111111", "script_action": "import objecttoolutils\nobjecttoolutils.matchTransform(kwargs, 2)", "script_action_help": "Select an object to match the scale with.", "script_action_icon": "BUTTONS_match_scale"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("s", "Scale", 3, default_value=([1, 1, 1]), min=0, max=10, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.XYZW)
+hou_parm_template.setTags({"autoscope": "1111111111111111111111111111111", "script_action": "import objecttoolutils\nobjecttoolutils.matchTransform(kwargs, 2)", "script_action_help": "Select an object to match the scale with.", "script_action_icon": "BUTTONS_match_scale"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("p", "Pivot Translate", 3, default_value=([0, 0, 0]), min=0, max=10, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.XYZW)
+hou_parm_template.setTags({"script_action": "import objecttoolutils\nobjecttoolutils.matchTransform(kwargs, 3)", "script_action_help": "Select an object to match the pivot with.", "script_action_icon": "BUTTONS_match_pivot"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("p", "Pivot Translate", 3, default_value=([0, 0, 0]), min=0, max=10, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.XYZW)
+hou_parm_template.setTags({"script_action": "import objecttoolutils\nobjecttoolutils.matchTransform(kwargs, 3)", "script_action_help": "Select an object to match the pivot with.", "script_action_icon": "BUTTONS_match_pivot"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("p", "Pivot Translate", 3, default_value=([0, 0, 0]), min=0, max=10, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.XYZW)
+hou_parm_template.setTags({"script_action": "import objecttoolutils\nobjecttoolutils.matchTransform(kwargs, 3)", "script_action_help": "Select an object to match the pivot with.", "script_action_icon": "BUTTONS_match_pivot"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("pr", "Pivot Rotate", 3, default_value=([0, 0, 0]), min=0, max=10, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.XYZW)
+hou_parm_template.setTags({"script_action": "import objecttoolutils\nobjecttoolutils.matchTransform(kwargs, 4)", "script_action_help": "Select an object to match the pivot rotation with.", "script_action_icon": "BUTTONS_match_pivot_rotation"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("pr", "Pivot Rotate", 3, default_value=([0, 0, 0]), min=0, max=10, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.XYZW)
+hou_parm_template.setTags({"script_action": "import objecttoolutils\nobjecttoolutils.matchTransform(kwargs, 4)", "script_action_help": "Select an object to match the pivot rotation with.", "script_action_icon": "BUTTONS_match_pivot_rotation"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("pr", "Pivot Rotate", 3, default_value=([0, 0, 0]), min=0, max=10, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.XYZW)
+hou_parm_template.setTags({"script_action": "import objecttoolutils\nobjecttoolutils.matchTransform(kwargs, 4)", "script_action_help": "Select an object to match the pivot rotation with.", "script_action_icon": "BUTTONS_match_pivot_rotation"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("scale", "Uniform Scale", 1, default_value=([1]), min=0, max=10, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.Base1)
+# Code for parameter template
+hou_parm_template = hou.MenuParmTemplate("pre_xform", "Modify Pre-Transform", menu_items=(["clean","cleantrans","cleanrot","cleanscales","extract","reset"]), menu_labels=(["Clean Transform","Clean Translates","Clean Rotates","Clean Scales","Extract Pre-transform","Reset Pre-transform"]), default_value=0, icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.StringReplace, menu_use_token=False, is_button_strip=False, strip_uses_icons=False)
+# Code for parameter template
+hou_parm_template = hou.ToggleParmTemplate("keeppos", "Keep Position When Parenting", default_value=False)
+# Code for parameter template
+hou_parm_template = hou.ToggleParmTemplate("childcomp", "Child Compensation", default_value=False)
+# Code for parameter template
+hou_parm_template = hou.ToggleParmTemplate("constraints_on", "Enable Constraints", default_value=False)
+# Code for parameter template
+hou_parm_template = hou.StringParmTemplate("constraints_path", "Constraints", 1, default_value=([""]), naming_scheme=hou.parmNamingScheme.Base1, string_type=hou.stringParmType.NodeReference, menu_items=([]), menu_labels=([]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal)
+hou_parm_template.setConditional(hou.parmCondType.HideWhen, "{ constraints_on == 0 }")
+hou_parm_template.setTags({"opfilter": "!!CHOP", "oprelative": ".", "script_action": "import objecttoolutils\nobjecttoolutils.constraintsMenu(kwargs)", "script_action_help": "", "script_action_icon": "BUTTONS_add_constraints"})
+# Code for parameter template
+hou_parm_template = hou.StringParmTemplate("lookatpath", "Look At", 1, default_value=([""]), naming_scheme=hou.parmNamingScheme.Base1, string_type=hou.stringParmType.NodeReference, menu_items=([]), menu_labels=([]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal)
+hou_parm_template.hide(True)
+hou_parm_template.setTags({"opfilter": "!!OBJ!!", "oprelative": "."})
+# Code for parameter template
+hou_parm_template = hou.StringParmTemplate("lookupobjpath", "Look Up Object", 1, default_value=([""]), naming_scheme=hou.parmNamingScheme.Base1, string_type=hou.stringParmType.NodeReference, menu_items=([]), menu_labels=([]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal)
+hou_parm_template.hide(True)
+hou_parm_template.setTags({"opfilter": "!!OBJ!!", "oprelative": "."})
+# Code for parameter template
+hou_parm_template = hou.StringParmTemplate("lookup", "Look At Up Vector", 1, default_value=(["on"]), naming_scheme=hou.parmNamingScheme.Base1, string_type=hou.stringParmType.Regular, menu_items=(["off","on","quat","pos","obj"]), menu_labels=(["Don't Use Up Vector","Use Up Vector","Use Quaternions","Use Global Position","Use Up Object"]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal)
+hou_parm_template.hide(True)
+# Code for parameter template
+hou_parm_template = hou.StringParmTemplate("pathobjpath", "Path Object", 1, default_value=([""]), naming_scheme=hou.parmNamingScheme.Base1, string_type=hou.stringParmType.NodeReference, menu_items=([]), menu_labels=([]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal)
+hou_parm_template.hide(True)
+hou_parm_template.setTags({"opfilter": "!!SOP!!", "oprelative": "."})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("roll", "Roll", 1, default_value=([0]), min=-360, max=360, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Angle, naming_scheme=hou.parmNamingScheme.Base1)
+hou_parm_template.hide(True)
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("pos", "Position", 1, default_value=([0]), min=0, max=10, min_is_strict=True, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.Base1)
+hou_parm_template.hide(True)
+# Code for parameter template
+hou_parm_template = hou.MenuParmTemplate("uparmtype", "Parameterization", menu_items=(["uniform","arc"]), menu_labels=(["Uniform","Arc Length"]), default_value=1, icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal, menu_use_token=False, is_button_strip=False, strip_uses_icons=False)
+hou_parm_template.hide(True)
+# Code for parameter template
+hou_parm_template = hou.IntParmTemplate("pathorient", "Orient Along Path", 1, default_value=([1]), min=0, max=1, min_is_strict=False, max_is_strict=False, naming_scheme=hou.parmNamingScheme.Base1, menu_items=([]), menu_labels=([]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal, menu_use_token=False)
+hou_parm_template.hide(True)
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("up", "Orient Up Vector", 3, default_value=([0, 1, 0]), min=0, max=10, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Vector, naming_scheme=hou.parmNamingScheme.XYZW)
+hou_parm_template.hide(True)
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("up", "Orient Up Vector", 3, default_value=([0, 1, 0]), min=0, max=10, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Vector, naming_scheme=hou.parmNamingScheme.XYZW)
+hou_parm_template.hide(True)
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("up", "Orient Up Vector", 3, default_value=([0, 1, 0]), min=0, max=10, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Vector, naming_scheme=hou.parmNamingScheme.XYZW)
+hou_parm_template.hide(True)
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("bank", "Auto-Bank factor", 1, default_value=([0]), min=-1, max=1, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.Base1)
+hou_parm_template.hide(True)
+# Code for parameter template
+hou_parm_template = hou.StringParmTemplate("shop_materialpath", "Material", 1, default_value=([""]), naming_scheme=hou.parmNamingScheme.Base1, string_type=hou.stringParmType.NodeReference, menu_items=([]), menu_labels=([]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal)
+hou_parm_template.setTags({"opfilter": "!!CUSTOM/MATERIAL!!", "oprelative": "."})
+# Code for parameter template
+hou_parm_template = hou.MenuParmTemplate("shop_materialopts", "Options", menu_items=([]), menu_labels=([]), default_value=0, icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Mini, menu_use_token=False, is_button_strip=False, strip_uses_icons=False)
+hou_parm_template.hide(True)
+# Code for parameter template
+hou_parm_template = hou.ToggleParmTemplate("tdisplay", "Display", default_value=False)
+hou_parm_template.setJoinWithNext(True)
+# Code for parameter template
+hou_parm_template = hou.IntParmTemplate("display", "Display", 1, default_value=([1]), min=0, max=1, min_is_strict=True, max_is_strict=True, naming_scheme=hou.parmNamingScheme.Base1, menu_items=([]), menu_labels=([]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal, menu_use_token=False)
+# Code for parameter template
+hou_parm_template = hou.ToggleParmTemplate("use_dcolor", "Set Wireframe Color", default_value=False)
+hou_parm_template.hide(True)
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("dcolor", "Wireframe Color", 3, default_value=([1, 1, 1]), min=0, max=1, min_is_strict=True, max_is_strict=True, look=hou.parmLook.ColorSquare, naming_scheme=hou.parmNamingScheme.RGBA)
+hou_parm_template.hide(True)
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("dcolor", "Wireframe Color", 3, default_value=([1, 1, 1]), min=0, max=1, min_is_strict=True, max_is_strict=True, look=hou.parmLook.ColorSquare, naming_scheme=hou.parmNamingScheme.RGBA)
+hou_parm_template.hide(True)
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("dcolor", "Wireframe Color", 3, default_value=([1, 1, 1]), min=0, max=1, min_is_strict=True, max_is_strict=True, look=hou.parmLook.ColorSquare, naming_scheme=hou.parmNamingScheme.RGBA)
+hou_parm_template.hide(True)
+# Code for parameter template
+hou_parm_template = hou.ToggleParmTemplate("picking", "Viewport Selecting Enabled", default_value=True)
+hou_parm_template.hide(True)
+# Code for parameter template
+hou_parm_template = hou.StringParmTemplate("pickscript", "Select Script", 1, default_value=([""]), naming_scheme=hou.parmNamingScheme.Base1, string_type=hou.stringParmType.FileReference, menu_items=([]), menu_labels=([]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.StringReplace)
+hou_parm_template.hide(True)
+hou_parm_template.setTags({"filechooser_mode": "read"})
+# Code for parameter template
+hou_parm_template = hou.ToggleParmTemplate("caching", "Cache Object Transform", default_value=True)
+hou_parm_template.hide(True)
+# Code for parameter template
+hou_parm_template = hou.ToggleParmTemplate("vport_shadeopen", "Shade Open Curves In Viewport", default_value=False)
+hou_parm_template.hide(True)
+# Code for parameter template
+hou_parm_template = hou.ToggleParmTemplate("vport_displayassubdiv", "Display as Subdivision in Viewport", default_value=False)
+hou_parm_template.hide(True)
+# Code for parameter template
+hou_parm_template = hou.MenuParmTemplate("vport_onionskin", "Onion Skinning", menu_items=(["off","xform","on"]), menu_labels=(["Off","Transform only","Full Deformation"]), default_value=0, icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal, menu_use_token=False, is_button_strip=False, strip_uses_icons=False)
+hou_parm_template.hide(True)
+# Code for parameter template
+hou_parm_template = hou.ToggleParmTemplate("renderable", "Renderable", default_value=True)
+hou_parm_template.hide(True)
+# Code for parameter template
+hou_parm_template = hou.FolderSetParmTemplate("parent", folder_names=(["parent","Transform"]), folder_type=hou.folderType.Tabs)
+# Code for parameter template
+hou_parm_template = hou.FolderSetParmTemplate("trcCTRLs", folder_names=(["Trace Controls"]), folder_type=hou.folderType.Simple)
+hou_parm_template.setTags({"group_type": "simple"})
+# Code for parameter template
+hou_parm_template = hou.StringParmTemplate("file", "File", 1, default_value=(["$JOB/test2.psd"]), naming_scheme=hou.parmNamingScheme.Base1, string_type=hou.stringParmType.FileReference, menu_items=([]), menu_labels=([]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.StringReplace)
+hou_parm_template.setJoinWithNext(True)
+hou_parm_template.setTags({"autoscope": "0000000000000000", "filechooser_pattern": "*.psd"})
+# Code for parameter template
+hou_parm_template = hou.ButtonParmTemplate("reload", "Reload PSD")
+hou_parm_template.setTags({"autoscope": "0000000000000000"})
+# Code for parameter template
+hou_parm_template = hou.StringParmTemplate("layer_name1", "Layer Name", 1, default_value=(["LWR_RCVR"]), naming_scheme=hou.parmNamingScheme.Base1, string_type=hou.stringParmType.Regular, menu_items=([]), menu_labels=([]), icon_names=([]), item_generator_script="opmenu -l -a trace_psd_file1 layer_name1", item_generator_script_language=hou.scriptLanguage.Hscript, menu_type=hou.menuType.StringReplace)
+hou_parm_template.setScriptCallbackLanguage(hou.scriptLanguage.Python)
+hou_parm_template.setTags({"autoscope": "0000000000000000", "script_callback_language": "python"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("thresh1", "Brightness Threshold", 1, default_value=([0.139]), min=0, max=1, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.Base1)
+hou_parm_template.setTags({"autoscope": "0000000000000000"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("step1", "Resample Step", 1, default_value=([0.52]), min=0.001, max=10, min_is_strict=True, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.Base1)
+hou_parm_template.setTags({"autoscope": "0000000000000000"})
+# Code for parameter template
+hou_parm_template = hou.FolderSetParmTemplate("genShpCTRLs", folder_names=(["General Shape Controls"]), folder_type=hou.folderType.Simple)
+hou_parm_template.setTags({"group_type": "simple"})
+# Code for parameter template
+hou_parm_template = hou.MenuParmTemplate("shpSwitch", "Shape Switch", menu_items=(["0","1"]), menu_labels=(["Cylindrical","Flat"]), default_value=0, icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal, menu_use_token=False, is_button_strip=False, strip_uses_icons=False)
+hou_parm_template.setScriptCallbackLanguage(hou.scriptLanguage.Python)
+hou_parm_template.setTags({"autoscope": "0000000000000000", "script_callback_language": "python"})
+# Code for parameter template
+hou_parm_template = hou.FolderSetParmTemplate("cylCTRLs", folder_names=(["Cylindrical Controls"]), folder_type=hou.folderType.Simple)
+hou_parm_template.setTags({"group_type": "simple"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("scale2", "Scale", 3, default_value=([1, 1, 1]), min=-1, max=1, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.XYZW)
+hou_parm_template.setScriptCallbackLanguage(hou.scriptLanguage.Python)
+hou_parm_template.setTags({"autoscope": "0000000000000000", "script_callback_language": "python"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("scale2", "Scale", 3, default_value=([1, 1, 1]), min=-1, max=1, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.XYZW)
+hou_parm_template.setScriptCallbackLanguage(hou.scriptLanguage.Python)
+hou_parm_template.setTags({"autoscope": "0000000000000000", "script_callback_language": "python"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("scale2", "Scale", 3, default_value=([1, 1, 1]), min=-1, max=1, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.XYZW)
+hou_parm_template.setScriptCallbackLanguage(hou.scriptLanguage.Python)
+hou_parm_template.setTags({"autoscope": "0000000000000000", "script_callback_language": "python"})
+# Code for parameter template
+hou_parm_template = hou.IntParmTemplate("sides", "Sides", 1, default_value=([12]), min=1, max=50, min_is_strict=True, max_is_strict=False, naming_scheme=hou.parmNamingScheme.Base1, menu_items=([]), menu_labels=([]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal, menu_use_token=False)
+hou_parm_template.setScriptCallbackLanguage(hou.scriptLanguage.Python)
+hou_parm_template.setTags({"autoscope": "0000000000000000", "script_callback_language": "python"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("WallThickness", "Wall Thickness", 1, default_value=([0]), min=-0.2, max=0.2, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.Base1)
+hou_parm_template.setScriptCallbackLanguage(hou.scriptLanguage.Python)
+hou_parm_template.setTags({"autoscope": "0000000000000000", "script_callback_language": "python"})
+# Code for parameter template
+hou_parm_template = hou.FolderSetParmTemplate("flatCTRLs", folder_names=(["Flat Controls"]), folder_type=hou.folderType.Simple)
+hou_parm_template.setTags({"group_type": "simple"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("zThickness", "Z-Thickness", 1, default_value=([0.012]), min=-1, max=1, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.Base1)
+hou_parm_template.setScriptCallbackLanguage(hou.scriptLanguage.Python)
+hou_parm_template.setTags({"autoscope": "0000000000000000", "script_callback_language": "python"})
+# Code for parameter template
+hou_parm_template = hou.ToggleParmTemplate("crveShp", "Carved Shape", default_value=False)
+hou_parm_template.setScriptCallbackLanguage(hou.scriptLanguage.Python)
+hou_parm_template.setTags({"autoscope": "0000000000000000", "script_callback_language": "python"})
+# Code for parameter template
+hou_parm_template = hou.FolderSetParmTemplate("xShpCTRLs", folder_names=(["Cross-Section Controls"]), folder_type=hou.folderType.Simple)
+hou_parm_template.setTags({"group_type": "simple"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("xChamfer", "Chamfer", 1, default_value=([0.096]), min=0, max=1, min_is_strict=True, max_is_strict=True, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.Base1)
+hou_parm_template.setScriptCallbackLanguage(hou.scriptLanguage.Python)
+hou_parm_template.setTags({"autoscope": "0000000000000000", "script_callback_language": "python"})
+# Code for parameter template
+hou_parm_template = hou.RampParmTemplate("crveShpProfile", "Carved Shape Profile", hou.rampParmType.Float, default_value=3, default_basis=None, color_type=None)
+hou_parm_template.setScriptCallbackLanguage(hou.scriptLanguage.Python)
+hou_parm_template.setTags({"autoscope": "0000000000000000", "rampfloatdefault": "1pos ( 0 ) 1value ( 0 ) 1interp ( linear ) 2pos ( 0.0066137565299868584 ) 2value ( 1 ) 2interp ( linear ) 3pos ( 1 ) 3value ( 1 ) 3interp ( linear )", "script_callback_language": "python"})
+# Code for parameter template
+hou_parm_template = hou.ToggleParmTemplate("contourBased", "Contour-based", default_value=False, default_expression='off', default_expression_language=hou.scriptLanguage.Hscript)
+hou_parm_template.setScriptCallbackLanguage(hou.scriptLanguage.Python)
+hou_parm_template.setTags({"autoscope": "0000000000000000", "script_callback_language": "python"})
+# Code for parameter template
+hou_parm_template = hou.FolderSetParmTemplate("contourControls", folder_names=(["Contour Controls"]), folder_type=hou.folderType.Simple)
+hou_parm_template.setTags({"group_type": "simple"})
+# Code for parameter template
+hou_parm_template = hou.ToggleParmTemplate("yxAxis", "Y/X Axis", default_value=False, default_expression='off', default_expression_language=hou.scriptLanguage.Hscript)
+hou_parm_template.setScriptCallbackLanguage(hou.scriptLanguage.Python)
+hou_parm_template.setTags({"autoscope": "0000000000000000", "script_callback_language": "python"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("scaleY", "Carver Margin Scale ", 1, default_value=([4.06]), min=-10, max=10, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.Base1)
+hou_parm_template.setScriptCallbackLanguage(hou.scriptLanguage.Python)
+hou_parm_template.setTags({"autoscope": "0000000000000000", "script_callback_language": "python"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("scaleX", "Carver Thickness Scale", 1, default_value=([1]), min=-10, max=10, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.Base1)
+hou_parm_template.setScriptCallbackLanguage(hou.scriptLanguage.Python)
+hou_parm_template.setTags({"autoscope": "0000000000000000", "script_callback_language": "python"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("strength", "Carver Smoothness", 1, default_value=([0]), min=0, max=50, min_is_strict=True, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.Base1)
+hou_parm_template.setScriptCallbackLanguage(hou.scriptLanguage.Python)
+hou_parm_template.setTags({"autoscope": "0000000000000000", "script_callback_language": "python"})
+# Code for parameter template
+hou_parm_template = hou.IntParmTemplate("segs", "Carver Resolution", 1, default_value=([9]), min=1, max=50, min_is_strict=True, max_is_strict=False, naming_scheme=hou.parmNamingScheme.Base1, menu_items=([]), menu_labels=([]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal, menu_use_token=False)
+hou_parm_template.setScriptCallbackLanguage(hou.scriptLanguage.Python)
+hou_parm_template.setTags({"autoscope": "0000000000000000", "script_callback_language": "python"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("bias", "Carver Spine Bias", 1, default_value=([1]), min=0, max=2, min_is_strict=True, max_is_strict=True, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.Base1)
+hou_parm_template.setScriptCallbackLanguage(hou.scriptLanguage.Python)
+hou_parm_template.setTags({"autoscope": "0000000000000000", "script_callback_language": "python"})
+# Code for parameter template
+hou_parm_template = hou.FolderSetParmTemplate("bvlCTRLs", folder_names=(["Bevel Controls"]), folder_type=hou.folderType.Simple)
+hou_parm_template.setTags({"group_type": "simple"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("bvlFlatAngle", "Bevel Flat Angle", 1, default_value=([51.8]), min=0, max=180, min_is_strict=True, max_is_strict=True, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.Base1)
+hou_parm_template.setScriptCallbackLanguage(hou.scriptLanguage.Python)
+hou_parm_template.setTags({"autoscope": "0000000000000000", "script_callback_language": "python"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("bvlWidth", "Bevel Width", 1, default_value=([0.002]), min=0, max=1, min_is_strict=True, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.Base1)
+hou_parm_template.setScriptCallbackLanguage(hou.scriptLanguage.Python)
+hou_parm_template.setTags({"autoscope": "0000000000000000", "script_callback_language": "python"})
+# Code for parameter template
+hou_parm_template = hou.FolderSetParmTemplate("parent_2", folder_names=(["Render"]), folder_type=hou.folderType.Tabs)
+# Code for parameter template
+hou_parm_template = hou.MenuParmTemplate("viewportlod", "Display As", menu_items=(["full","points","box","centroid","hidden","subd"]), menu_labels=(["Full Geometry","Point Cloud","Bounding Box","Centroid","Hidden","Subdivision Surface / Curves"]), default_value=0, icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal, menu_use_token=False, is_button_strip=False, strip_uses_icons=False)
+hou_parm_template.setHelp("Choose how the object's geometry should be rendered in the viewport")
+hou_parm_template.setTags({"spare_category": "Render"})
+# Code for parameter template
+hou_parm_template = hou.StringParmTemplate("vm_rendervisibility", "Render Visibility", 1, default_value=(["*"]), naming_scheme=hou.parmNamingScheme.Base1, string_type=hou.stringParmType.Regular, menu_items=(["*","primary","primary|shadow","-primary","-diffuse","-diffuse&-reflect&-refract",""]), menu_labels=(["Visible to all","Visible only to primary rays","Visible only to primary and shadow rays","Invisible to primary rays (Phantom)","Invisible to diffuse rays","Invisible to secondary rays","Invisible (Unrenderable)"]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.StringReplace)
+hou_parm_template.setTags({"mantra_class": "object", "mantra_name": "rendervisibility", "spare_category": "Render"})
+# Code for parameter template
+hou_parm_template = hou.ToggleParmTemplate("vm_rendersubd", "Render Polygons As Subdivision (Mantra)", default_value=False)
+hou_parm_template.setTags({"mantra_class": "object", "mantra_name": "rendersubd", "spare_category": "Geometry"})
+# Code for parameter template
+hou_parm_template = hou.StringParmTemplate("vm_subdstyle", "Subdivision Style", 1, default_value=(["mantra_catclark"]), naming_scheme=hou.parmNamingScheme.Base1, string_type=hou.stringParmType.Regular, menu_items=(["mantra_catclark","osd_catclark"]), menu_labels=(["Mantra Catmull-Clark","OpenSubdiv Catmull-Clark"]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal)
+hou_parm_template.setConditional(hou.parmCondType.HideWhen, "{ vm_rendersubd == 0 }")
+hou_parm_template.setTags({"mantra_class": "object", "mantra_name": "subdstyle", "spare_category": "Geometry"})
+# Code for parameter template
+hou_parm_template = hou.StringParmTemplate("vm_subdgroup", "Subdivision Group", 1, default_value=([""]), naming_scheme=hou.parmNamingScheme.Base1, string_type=hou.stringParmType.Regular, menu_items=([]), menu_labels=([]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal)
+hou_parm_template.setConditional(hou.parmCondType.HideWhen, "{ vm_rendersubd == 0 }")
+hou_parm_template.setTags({"mantra_class": "object", "mantra_name": "subdgroup", "spare_category": "Geometry"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("vm_osd_quality", "Open Subdiv Quality", 1, default_value=([1]), min=0, max=10, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.Base1)
+hou_parm_template.setConditional(hou.parmCondType.HideWhen, "{ vm_rendersubd == 0 vm_subdstyle != osd_catclark }")
+hou_parm_template.setTags({"mantra_class": "object", "mantra_name": "osd_quality", "spare_category": "Geometry"})
+# Code for parameter template
+hou_parm_template = hou.IntParmTemplate("vm_osd_vtxinterp", "OSD Vtx Interp", 1, default_value=([2]), min=0, max=10, min_is_strict=False, max_is_strict=False, naming_scheme=hou.parmNamingScheme.Base1, menu_items=(["0","1","2"]), menu_labels=(["No vertex interpolation","Edges only","Edges and Corners"]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal, menu_use_token=False)
+hou_parm_template.setConditional(hou.parmCondType.HideWhen, "{ vm_rendersubd == 0 vm_subdstyle != osd_catclark }")
+hou_parm_template.setTags({"mantra_class": "object", "mantra_name": "osd_vtxinterp", "spare_category": "Geometry"})
+# Code for parameter template
+hou_parm_template = hou.IntParmTemplate("vm_osd_fvarinterp", "OSD FVar Interp", 1, default_value=([4]), min=0, max=10, min_is_strict=False, max_is_strict=False, naming_scheme=hou.parmNamingScheme.Base1, menu_items=(["0","1","2","3","4","5"]), menu_labels=(["Smooth everywhere","Sharpen corners only","Sharpen edges and corners","Sharpen edges and propagated corners","Sharpen all boundaries","Bilinear interpolation"]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal, menu_use_token=False)
+hou_parm_template.setConditional(hou.parmCondType.HideWhen, "{ vm_rendersubd == 0 vm_subdstyle != osd_catclark }")
+hou_parm_template.setTags({"mantra_class": "object", "mantra_name": "osd_fvarinterp", "spare_category": "Geometry"})
+# Code for parameter template
+hou_parm_template = hou.FolderSetParmTemplate("folder0", folder_names=(["Shading","Sampling","Dicing","Geometry"]), folder_type=hou.folderType.Tabs)
+# Code for parameter template
+hou_parm_template = hou.StringParmTemplate("categories", "Categories", 1, default_value=([""]), naming_scheme=hou.parmNamingScheme.Base1, string_type=hou.stringParmType.Regular, menu_items=([]), menu_labels=([]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal)
+hou_parm_template.setHelp("A list of tags which can be used to select the object")
+hou_parm_template.setTags({"spare_category": "Shading"})
+# Code for parameter template
+hou_parm_template = hou.StringParmTemplate("reflectmask", "Reflection Mask", 1, default_value=(["*"]), naming_scheme=hou.parmNamingScheme.Base1, string_type=hou.stringParmType.NodeReferenceList, menu_items=([]), menu_labels=([]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal)
+hou_parm_template.setHelp("Objects that will be reflected on this object.")
+hou_parm_template.setTags({"opexpand": "1", "opfilter": "!!OBJ/GEOMETRY!!", "oprelative": "/obj", "spare_category": "Shading"})
+# Code for parameter template
+hou_parm_template = hou.StringParmTemplate("refractmask", "Refraction Mask", 1, default_value=(["*"]), naming_scheme=hou.parmNamingScheme.Base1, string_type=hou.stringParmType.NodeReferenceList, menu_items=([]), menu_labels=([]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal)
+hou_parm_template.setHelp("Objects that will be refracted on this object.")
+hou_parm_template.setTags({"opexpand": "1", "opfilter": "!!OBJ/GEOMETRY!!", "oprelative": "/obj", "spare_category": "Shading"})
+# Code for parameter template
+hou_parm_template = hou.StringParmTemplate("lightmask", "Light Mask", 1, default_value=(["*"]), naming_scheme=hou.parmNamingScheme.Base1, string_type=hou.stringParmType.NodeReferenceList, menu_items=([]), menu_labels=([]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal)
+hou_parm_template.setHelp("Lights that illuminate this object.")
+hou_parm_template.setTags({"opexpand": "1", "opfilter": "!!OBJ/LIGHT!!", "oprelative": "/obj", "spare_category": "Shading"})
+# Code for parameter template
+hou_parm_template = hou.StringParmTemplate("lightcategories", "Light Selection", 1, default_value=(["*"]), naming_scheme=hou.parmNamingScheme.Base1, string_type=hou.stringParmType.Regular, menu_items=([]), menu_labels=([]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal)
+hou_parm_template.setTags({"spare_category": "Shading"})
+# Code for parameter template
+hou_parm_template = hou.StringParmTemplate("vm_lpetag", "LPE Tag", 1, default_value=([""]), naming_scheme=hou.parmNamingScheme.Base1, string_type=hou.stringParmType.Regular, menu_items=([]), menu_labels=([]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal)
+hou_parm_template.setTags({"mantra_class": "object", "mantra_name": "lpetag", "spare_category": "Shading"})
+# Code for parameter template
+hou_parm_template = hou.StringParmTemplate("vm_volumefilter", "Volume Filter", 1, default_value=(["box"]), naming_scheme=hou.parmNamingScheme.Base1, string_type=hou.stringParmType.Regular, menu_items=(["box","gaussian","bartlett","catrom","hanning","blackman","sinc"]), menu_labels=(["Box Filter","Gaussian","Bartlett (triangle)","Catmull-Rom","Hanning","Blackman","Sinc (sharpening)"]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal)
+hou_parm_template.setTags({"mantra_class": "object", "mantra_name": "filter", "spare_category": "Shading"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("vm_volumefilterwidth", "Volume Filter Width", 1, default_value=([1]), min=0.001, max=5, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.Base1)
+hou_parm_template.setTags({"mantra_class": "object", "mantra_name": "filterwidth", "spare_category": "Shading"})
+# Code for parameter template
+hou_parm_template = hou.ToggleParmTemplate("vm_matte", "Matte shading", default_value=False)
+hou_parm_template.setTags({"mantra_class": "object", "mantra_name": "matte", "spare_category": "Shading"})
+# Code for parameter template
+hou_parm_template = hou.ToggleParmTemplate("vm_rayshade", "Raytrace Shading", default_value=False)
+hou_parm_template.setTags({"mantra_class": "object", "mantra_name": "rayshade", "spare_category": "Shading"})
+# Code for parameter template
+hou_parm_template = hou.MenuParmTemplate("geo_velocityblur", "Geometry Velocity Blur", menu_items=(["off","on","accelblur"]), menu_labels=(["No Velocity Blur","Velocity Blur","Acceleration Blur"]), default_value=0, icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal, menu_use_token=False, is_button_strip=False, strip_uses_icons=False)
+hou_parm_template.setConditional(hou.parmCondType.DisableWhen, "{ allowmotionblur == 0 }")
+# Code for parameter template
+hou_parm_template = hou.StringParmTemplate("geo_accelattribute", "Acceleration Attribute", 1, default_value=(["accel"]), naming_scheme=hou.parmNamingScheme.Base1, string_type=hou.stringParmType.Regular, menu_items=([]), menu_labels=([]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal)
+hou_parm_template.setConditional(hou.parmCondType.HideWhen, "{ geo_velocityblur != accelblur }")
+hou_parm_template.setTags({"spare_category": "Sampling"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("vm_shadingquality", "Shading Quality", 1, default_value=([1]), min=0, max=10, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.Base1)
+hou_parm_template.setTags({"mantra_class": "object", "mantra_name": "shadingquality", "spare_category": "Dicing"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("vm_flatness", "Dicing Flatness", 1, default_value=([0.05]), min=0, max=1, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.Base1)
+hou_parm_template.setTags({"mantra_class": "object", "mantra_name": "flatness", "spare_category": "Dicing"})
+# Code for parameter template
+hou_parm_template = hou.IntParmTemplate("vm_raypredice", "Ray Predicing", 1, default_value=([0]), min=0, max=10, min_is_strict=False, max_is_strict=False, naming_scheme=hou.parmNamingScheme.Base1, menu_items=(["0","1","2"]), menu_labels=(["Disable Predicing","Full Predicing","Precompute Bounds"]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal, menu_use_token=False)
+hou_parm_template.setTags({"mantra_class": "object", "mantra_name": "raypredice", "spare_category": "Dicing"})
+# Code for parameter template
+hou_parm_template = hou.ToggleParmTemplate("vm_curvesurface", "Shade Curves As Surfaces", default_value=False)
+hou_parm_template.setTags({"mantra_class": "object", "mantra_name": "curvesurface", "spare_category": "Dicing"})
+# Code for parameter template
+hou_parm_template = hou.ToggleParmTemplate("vm_rmbackface", "Backface Removal", default_value=False)
+hou_parm_template.setTags({"mantra_class": "object", "mantra_name": "rmbackface", "spare_category": "Geometry"})
+# Code for parameter template
+hou_parm_template = hou.StringParmTemplate("shop_geometrypath", "Procedural Shader", 1, default_value=([""]), naming_scheme=hou.parmNamingScheme.Base1, string_type=hou.stringParmType.NodeReference, menu_items=([]), menu_labels=([]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal)
+hou_parm_template.setTags({"opfilter": "!!SHOP/GEOMETRY!!", "oprelative": ".", "spare_category": "Geometry"})
+# Code for parameter template
+hou_parm_template = hou.ToggleParmTemplate("vm_forcegeometry", "Force Procedural Geometry Output", default_value=True)
+hou_parm_template.setTags({"spare_category": "Geometry"})
+# Code for parameter template
+hou_parm_template = hou.ToggleParmTemplate("vm_rendersubdcurves", "Render Polygon Curves As Subdivision (Mantra)", default_value=False)
+hou_parm_template.setTags({"mantra_class": "object", "mantra_name": "rendersubdcurves", "spare_category": "Geometry"})
+# Code for parameter template
+hou_parm_template = hou.IntParmTemplate("vm_renderpoints", "Render As Points (Mantra)", 1, default_value=([2]), min=0, max=10, min_is_strict=False, max_is_strict=False, naming_scheme=hou.parmNamingScheme.Base1, menu_items=(["0","1","2"]), menu_labels=(["No Point Rendering","Render Only Points","Render Unconnected Points"]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal, menu_use_token=False)
+hou_parm_template.setTags({"mantra_class": "object", "mantra_name": "renderpoints", "spare_category": "Geometry"})
+# Code for parameter template
+hou_parm_template = hou.IntParmTemplate("vm_renderpointsas", "Render Points As (Mantra)", 1, default_value=([0]), min=0, max=10, min_is_strict=False, max_is_strict=False, naming_scheme=hou.parmNamingScheme.Base1, menu_items=(["0","1"]), menu_labels=(["Spheres","Circles"]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal, menu_use_token=False)
+hou_parm_template.setConditional(hou.parmCondType.DisableWhen, "{ vm_renderpoints == 0 }")
+hou_parm_template.setTags({"mantra_class": "object", "mantra_name": "renderpointsas", "spare_category": "Geometry"})
+# Code for parameter template
+hou_parm_template = hou.ToggleParmTemplate("vm_usenforpoints", "Use N For Point Rendering", default_value=False)
+hou_parm_template.setConditional(hou.parmCondType.DisableWhen, "{ vm_renderpoints == 0 }")
+hou_parm_template.setTags({"mantra_class": "object", "mantra_name": "usenforpoints", "spare_category": "Geometry"})
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("vm_pointscale", "Point Scale", 1, default_value=([1]), min=0, max=10, min_is_strict=True, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.Base1)
+hou_parm_template.setConditional(hou.parmCondType.DisableWhen, "{ vm_renderpoints == 0 }")
+hou_parm_template.setTags({"mantra_class": "object", "mantra_name": "pointscale", "spare_category": "Geometry"})
+# Code for parameter template
+hou_parm_template = hou.ToggleParmTemplate("vm_pscalediameter", "Treat Point Scale as Diameter Instead of Radius", default_value=False)
+hou_parm_template.setTags({"mantra_class": "object", "mantra_name": "pscalediameter", "spare_category": "Geometry"})
+# Code for parameter template
+hou_parm_template = hou.ToggleParmTemplate("vm_metavolume", "Metaballs as Volume", default_value=False)
+hou_parm_template.setTags({"mantra_class": "object", "mantra_name": "metavolume", "spare_category": "Geometry"})
+# Code for parameter template
+hou_parm_template = hou.IntParmTemplate("vm_coving", "Coving", 1, default_value=([1]), min=0, max=10, min_is_strict=False, max_is_strict=False, naming_scheme=hou.parmNamingScheme.Base1, menu_items=(["0","1","2"]), menu_labels=(["Disable Coving","Coving for displacement/sub-d","Coving for all primitives"]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal, menu_use_token=False)
+hou_parm_template.setTags({"mantra_class": "object", "mantra_name": "coving", "spare_category": "Geometry"})
+# Code for parameter template
+hou_parm_template = hou.StringParmTemplate("vm_materialoverride", "Material Override", 1, default_value=(["compact"]), naming_scheme=hou.parmNamingScheme.Base1, string_type=hou.stringParmType.Regular, menu_items=(["none","full","compact"]), menu_labels=(["Disabled","Evaluate for Each Primitve/Point","Evaluate Once"]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal)
+hou_parm_template.setTags({"spare_category": "Geometry"})
+# Code for parameter template
+hou_parm_template = hou.ToggleParmTemplate("vm_overridedetail", "Ignore Geometry Attribute Shaders", default_value=False)
+hou_parm_template.setTags({"mantra_class": "object", "mantra_name": "overridedetail", "spare_category": "Geometry"})
+# Code for parameter template
+hou_parm_template = hou.ToggleParmTemplate("vm_procuseroottransform", "Proc Use Root Transform", default_value=True)
+hou_parm_template.setTags({"mantra_class": "object", "mantra_name": "procuseroottransform", "spare_category": "Geometry"})
+# Code for parameter template
+hou_parm_template = hou.FolderSetParmTemplate("parent_3", folder_names=(["Misc"]), folder_type=hou.folderType.Tabs)
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("crveShpProfile1pos", "Position", 1, default_value=([0]), min=0, max=1, min_is_strict=True, max_is_strict=True, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.Base1)
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("crveShpProfile1value", "Value", 1, default_value=([0]), min=0, max=10, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.Base1)
+# Code for parameter template
+hou_parm_template = hou.MenuParmTemplate("crveShpProfile1interp", "Interpolation", menu_items=(["constant","linear","catmull-rom","monotonecubic","bezier","bspline","hermite"]), menu_labels=(["Constant","Linear","Catmull-Rom","Monotone Cubic","Bezier","B-Spline","Hermite"]), default_value=1, icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal, menu_use_token=False, is_button_strip=False, strip_uses_icons=False)
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("crveShpProfile2pos", "Position", 1, default_value=([0]), min=0, max=1, min_is_strict=True, max_is_strict=True, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.Base1)
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("crveShpProfile2value", "Value", 1, default_value=([0]), min=0, max=10, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.Base1)
+# Code for parameter template
+hou_parm_template = hou.MenuParmTemplate("crveShpProfile2interp", "Interpolation", menu_items=(["constant","linear","catmull-rom","monotonecubic","bezier","bspline","hermite"]), menu_labels=(["Constant","Linear","Catmull-Rom","Monotone Cubic","Bezier","B-Spline","Hermite"]), default_value=1, icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal, menu_use_token=False, is_button_strip=False, strip_uses_icons=False)
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("crveShpProfile3pos", "Position", 1, default_value=([0]), min=0, max=1, min_is_strict=True, max_is_strict=True, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.Base1)
+# Code for parameter template
+hou_parm_template = hou.FloatParmTemplate("crveShpProfile3value", "Value", 1, default_value=([0]), min=0, max=10, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.Base1)
+# Code for parameter template
+hou_parm_template = hou.MenuParmTemplate("crveShpProfile3interp", "Interpolation", menu_items=(["constant","linear","catmull-rom","monotonecubic","bezier","bspline","hermite"]), menu_labels=(["Constant","Linear","Catmull-Rom","Monotone Cubic","Bezier","B-Spline","Hermite"]), default_value=1, icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal, menu_use_token=False, is_button_strip=False, strip_uses_icons=False)

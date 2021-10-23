@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57f7654b-18b4-4055-b385-9f535a3bfb2d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/WPN_Generator_GRP.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gunPartParmTemplatesGRP.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GunPart.py" beforeDir="false" afterPath="$PROJECT_DIR$/GunPart.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WPN_Generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/WPN_Generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WPN_Interface_Utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/WPN_Interface_Utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parmTemplates/create_gunpart_parm_template.py" beforeDir="false" afterPath="$PROJECT_DIR$/parmTemplates/create_gunpart_parm_template.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +35,13 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/WPN_Enums.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Users\Jason\Documents\houdini18.5\python3.7libs\WPN_GENERATOR_PY" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.psdparser">
     <configuration name="WPN_Generator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -127,7 +132,7 @@
       <workItem from="1634569654242" duration="14046000" />
       <workItem from="1634716497007" duration="693000" />
       <workItem from="1634745443979" duration="3462000" />
-      <workItem from="1634977378658" duration="1110000" />
+      <workItem from="1634977378658" duration="28977000" />
     </task>
     <servers />
   </component>
@@ -176,6 +181,10 @@
     </state>
     <state x="-1492" y="201" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1634413116791" />
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1634306731023" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1634990916806">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1634990916806" />
     <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1634405035411">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>

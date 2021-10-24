@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57f7654b-18b4-4055-b385-9f535a3bfb2d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/WPN_Generator_GRP.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gunPartParmTemplatesGRP.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GunPart_GRP.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parmTemplates/create_gunpart_parm_template.py" beforeDir="false" afterPath="$PROJECT_DIR$/parmTemplates/create_gunpart_parm_template.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WPN_Generator_GRP.py" beforeDir="false" afterPath="$PROJECT_DIR$/WPN_Generator_GRP.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +131,8 @@
       <workItem from="1634569654242" duration="14046000" />
       <workItem from="1634716497007" duration="693000" />
       <workItem from="1634745443979" duration="3462000" />
-      <workItem from="1634977378658" duration="28977000" />
+      <workItem from="1634977378658" duration="29575000" />
+      <workItem from="1635062073299" duration="8780000" />
     </task>
     <servers />
   </component>

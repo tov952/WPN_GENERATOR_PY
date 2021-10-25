@@ -6,8 +6,8 @@ import itertools
 from WPN_GENERATOR_PY import WPN_Enums
 from WPN_GENERATOR_PY import WPN_Utils
 sys.path.append(r"E:\Users\Jason\Documents\houdini18.5\python3.7libs\WPN_GENERATOR_PY\venv\Lib\site-packages")
-
-from WPN_GENERATOR_PY import GunPart_GRP as GunPart
+from WPN_GENERATOR_PY import PSDAssetClasses as psdAsset
+from WPN_GENERATOR_PY import WPNAssetClasses as wpnAsset
 from WPN_GENERATOR_PY import gunPartParmTemplatesGRP as GPpT
 
 import fnmatch
@@ -17,10 +17,12 @@ from psd_tools.constants import Resource
 
 #GLOBALS
 GEO_CONTAINER = "GEO_CONTAINER"
-debug = True
+debug = False
+
 
 gunPartList = []   #Stores instances of generated gunparts
 parentChildDict = {} #Stores dict of <Group> : <Layer>/<Group> Children[]
+gunPartContainerList = [] #Stores instances of generated psdAsset containers
 
 psdFilepath = ""
 psd = None #stores PSD
@@ -55,9 +57,9 @@ def rebuild(this_node):
     print("---------------------Setting Layer Names-----------------------------")
     #SetValidLayerName(this_node, validPSDLayerNames)
     print("---------------------Setting Gun Part Shape--------------------------")
-    #for gunpart in gunPartList:
-        #gunpart.setValidLayerName()
-        #gunpart.setShapeType()
+    #for psdAsset in gunPartList:
+        #psdAsset.setValidLayerName()
+        #psdAsset.setShapeType()
 
 
 def BuildParmTemplateHeirarchy(groupParentDict, this_node):
@@ -77,7 +79,7 @@ def BuildParmTemplateHeirarchy(groupParentDict, this_node):
                 splitChildName = child.name.split("_")
                 if "SIDE" in splitChildName or "CUTOUT" in splitChildName:
                     parentParmTemplate.addParmTemplate(buildParmTemplates(this_node, child.name))
-                print("Parenting " + child.name + " Parms into " + parent.name + " ParmFolder")
+                    print("Parenting " + child.name + " Parms into " + parent.name + " ParmFolder")
         if parentParmTemplate != None:
             if parent.is_group:
                 containingFolder = groupParentDict[parent]
@@ -145,7 +147,7 @@ def SetValidLayerName(this_node, validPSDLayerNames):
         try:
             this_node.parm(noShapeName + "_layer_name1").set(validLayerName)
         except:
-            print("ERROR: Setting " + noShapeName + "_layer_name1 failed, Check LayerName Conventions; [gunPart]#_[shapeType]")
+            print("ERROR: Setting " + noShapeName + "_layer_name1 failed, Check LayerName Conventions; [psdAsset]#_[shapeType]")
 
 
 def renameChildLayersAndSave(PCDict):
@@ -166,16 +168,20 @@ def renameChildLayersAndSave(PCDict):
 
 
 def genGunPartNodes(geoContainer, this_node):
-    # Gen Gunpart Nodes as needed
-
-    for group in groupParentDict.keys():
-        gunPartNodeName = group.name
-        gunPart = GunPart.gunpart(gunPartNodeName)
-        gunPartNode = gunPart.createGunpartNode()
-        gunPartList.append(gunPart)
+    # Gen psdAsset Nodes as needed
+    for parent, children in parentChildDict.items():
+        if parent.parent.name == "Root":
+            gunPartContainerObj = psdAsset.Container(parent)
+            gunPartContainerNode = gunPartContainerObj.createContainer()
+            gunPartContainerObj.populateChildAssetsOfNodeType(wpnAsset.CutoutAsset, layerNames = ["CUTOUT"])
+            gunPartContainerObj.populateChildAssetsOfNodeType(wpnAsset.GunPartAsset, layerNames = ["SIDE"])
+            gunPartContainerObj.populateContainerWithChildAssets()
+            gunPartContainerList.append(gunPartContainerObj)
+        #gunPartNode = psdAsset.createGunpartNode()
+        #gunPartList.append(psdAsset)
         #print(gunPartNode)
-        gunPartNode.parm("file").set(WPN_Utils.linkExpressionSTR("file", True, True))
-        linkParms(this_node, gunPartNode, gunPart.parmPrefix)
+        #gunPartNode.parm("file").set(WPN_Utils.linkExpressionSTR("file", True, True))
+        #linkParms(this_node, gunPartNode, psdAsset.parmPrefix)
 
     # for gpType in gpTypes:
     #     multiparm = this_node.parm("numOf_" + gpType.name)
@@ -185,12 +191,12 @@ def genGunPartNodes(geoContainer, this_node):
     #         multiparmLen = multiparm.eval()
     #         for i in range(multiparmLen):
     #             gunPartNodeName = gpType.name
-    #             gunPart = GunPart.gunpart(gunPartNodeName, gpType, i)
-    #             gunPartNode = gunPart.createGunpartNode()
-    #             gunPartList.append(gunPart)
+    #             psdAsset = psdAsset.psdAsset(gunPartNodeName, gpType, i)
+    #             gunPartNode = psdAsset.createGunpartNode()
+    #             gunPartList.append(psdAsset)
     #             #print(gunPartNode)
     #             gunPartNode.parm("file").set(WPN_Utils.linkExpressionSTR("file", True, True))
-    #             linkParms(this_node, gunPartNode, gunPart.parmPrefix)
+    #             linkParms(this_node, gunPartNode, psdAsset.parmPrefix)
 
     geoContainer.layoutChildren()
     for child in geoContainer.children():

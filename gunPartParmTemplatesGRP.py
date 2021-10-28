@@ -88,7 +88,8 @@ def genGunpartParmTemplates(gunpartName):
     hou_parm_template4.setTags({"autoscope": "0000000000000000", "script_callback_language": "python"})
     hou_parm_template3.addParmTemplate(hou_parm_template4)
     # Code for parameter template
-    hou_parm_template4 = hou.RampParmTemplate(gunpartName+"_crveShpProfile", "Carved Shape Profile", hou.rampParmType.Float, default_value=3, default_basis=None, color_type=None, script_callback = "hou.phm().setRamp(kwargs['parm'],kwargs['node']," + "'GEO_CONTAINER/"+gunpartName+"_CONTAINER/')")
+    targetContainerName = gunpartName.split("_")[0]
+    hou_parm_template4 = hou.RampParmTemplate(gunpartName+"_crveShpProfile", "Carved Shape Profile", hou.rampParmType.Float, default_value=3, default_basis=None, color_type=None, script_callback = "hou.phm().setRamp(kwargs['parm'],kwargs['node']," + "'GEO_CONTAINER/"+targetContainerName+"_CONTAINER/"+ gunpartName + "')")
     hou_parm_template4.setConditional(hou.parmCondType.HideWhen, "{ " + gunpartName + ""+ "_crveShp != 1 }")
     hou_parm_template4.setScriptCallbackLanguage(hou.scriptLanguage.Python)
     hou_parm_template4.setTags({"autoscope": "0000000000000000", "rampfloatdefault": "1pos ( 0 ) 1value ( 0 ) 1interp ( linear ) 2pos ( 0.0066137565299868584 ) 2value ( 1 ) 2interp ( linear ) 3pos ( 1 ) 3value ( 1 ) 3interp ( linear )", "script_callback_language": "python"})

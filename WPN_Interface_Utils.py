@@ -17,8 +17,7 @@ def setRamp(this_parm, this_node, targetNodePath):
     this_parmNameSplit = this_parm.name().split("_")
     this_parmPrefix = '_'.join(this_parmNameSplit[0:-1])
     targetParmName = this_parmNameSplit[-1]
-    targetNodePath += this_parmPrefix
-    #print(targetNodePath)
+    print(targetNodePath)
     targetNode = this_node.node(targetNodePath)
     target = targetNode.parm(targetParmName)
 

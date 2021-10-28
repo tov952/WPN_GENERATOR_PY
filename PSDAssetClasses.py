@@ -34,7 +34,7 @@ class Container(object):
     """Creates childAssetObjs Flat"""
     def populateChildAssetsOfNodeType(self, ChildAssetClass,layerNames = []):
         if debug:
-            print("Creating " + ChildAssetClass.__name__ + " Objs of " + self.name)
+            print("DEBUG: Creating " + ChildAssetClass.__name__ + " Objs of " + self.name)
         PSDGrpDesc = []
         layersToChild = []
         for desc in self.PSDGroup.descendants():
@@ -93,37 +93,43 @@ class ChildAsset(object):
         self.parmSourceTargetDict = {}
 
     def linkFile(self):
-        print("Linking File Parm")
+        if debug:
+            print("DEBUG: Linking File Parm from: " + self.parentNode.name() + " to " + self.node.name())
         fileParm = self.parentNode.parm("renamedFile")
         self.node.parm("file").set(WPN_Utils.linkExpressionSTR(fileParm, force_evaluate = True, string = True))
 
     def getParmsOfPrefix(self, node, parmPrefix):
-        print("Getting Parms in " + node.name() + " for " + parmPrefix)
+        if debug:
+            print("DEBUG: Getting Parms in " + node.name() + " for " + parmPrefix)
         return node.globParms(parmPrefix+"*")
 
     def getParmSourceTargetDict(self, node, parmPrefix):
-        print("Getting ParmSourceTargetDict in " + node.name() + " for " + parmPrefix)
         parmSourceTargetDict = {}
         #parmNames = [ parmSource.name().split(parmPrefix+"_")[-1] for parmSource in self.parmSources]
         parmSourceNames = [ parmSource.name() for parmSource in self.parmSources]
         #print("parmName is:")
         if debug:
+            print("Getting ParmSourceTargetDict in " + node.name() + " for " + parmPrefix)
             pprint.pprint(parmSourceNames)
         for parm in node.parms():
             matchParmList = fnmatch.filter(parmSourceNames, "*" + parm.name())
             if len(matchParmList)>0:
                 #print("matched" + matchParmList[0] + " with " + parm.name())
                 matchedParm = self.parentNode.parm(matchParmList[0])
-                parmSourceTargetDict[matchedParm] = parm
+                if "crveShpProfile" in matchedParm.name():
+                    pass
+                else:
+                    parmSourceTargetDict[matchedParm] = parm
         return parmSourceTargetDict
 
 
 
     def linkParmSourcesToTargets(self):
-        print("Linking Parm Sources to Targets")
+        if debug:
+            print("DEBUG: Linking Parm Sources to Targets for " + self.node.name())
         for source, target in self.parmSourceTargetDict.items():
             if debug:
-                print("Linking " + source.name() + " to " + target.name())
+                print("DEBUG: Linking " + source.name() + " to " + target.name())
             target.setExpression(WPN_Utils.linkExpressionSTR(source))
 
 

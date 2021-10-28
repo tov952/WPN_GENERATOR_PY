@@ -18,6 +18,7 @@ class GunPartAsset(psdAsset.ChildAsset):
         self.nodeType = gunPartHDAName
         self.frontLayer = self.setToSameDepthLayer(self.layerPrefix + "_FRONT")
         self.spineLayer = self.setToSameDepthLayer(self.layerPrefix + "_SPINE")
+        self.cylShape = self.setToSameDepthLayer(self.layerPrefix + "_CYL")
         self.cutoutObjs = []
 
         self.getCutoutObjs()
@@ -62,15 +63,33 @@ class GunPartAsset(psdAsset.ChildAsset):
         if len(self.cutoutObjs) == 0:
             print("No Cutout Objects Found!")
 
+
+
     def setLayerNameParms(self):
         for parm, layer in self.parmLayerDict.items():
             try:
                 self.node.parm(parm).set(layer.name)
             except:
                 print("Skipping " +self.node.name()+ "'s " + parm + " assignment, as layer doesn't exist")
+
+    def setCarvedShape(self):
+
+        if self.frontLayer != None:
+            if debug:
+                print("DEBUG: Front Layer Exists! Setting Shape Profile to True")
+            self.node.parm("crveShp").set(1)
+
+    def setShape(self):
+        if self.cylShape != None:
+            if debug:
+                print("DEBUG: Cyl Layer Exists! Setting Shape Switch to Cylindrical")
+            self.node.parm("shpSwitch").set(0)
+
     def postNodeCreation(self, *args, **kwargs):
         super( GunPartAsset, self).postNodeCreation(*args, **kwargs)
         self.setLayerNameParms()
+        self.setCarvedShape()
+        self.setShape()
 
 
 

@@ -17,7 +17,7 @@ from psd_tools.constants import Resource
 
 #GLOBALS
 GEO_CONTAINER = "GEO_CONTAINER"
-debug = True
+debug = False
 
 
 gunPartList = []   #Stores instances of generated gunparts
@@ -42,24 +42,20 @@ def rebuild(this_node):
     # Cleans Geo Container
     for child in geoContainer.children():
         child.destroy()
-    print("---------------------Get Parent-Child Dict---------------------------")
+    if debug:
+        print("---------------------Get Parent-Child Dict---------------------------")
     PCDict = getPSDGrpAndChildren(this_node)
     print("---------------------Saving Renamed PSDs-----------------------------")
     savedPSDPath = renameChildLayersAndSave(PCDict)
     savedPSD = PSDImage.open(savedPSDPath)
-    print("---------------------Get Group:Parent Dict---------------------------")
+    if debug:
+        print("---------------------Get Group:Parent Dict---------------------------")
     groupParentDict = getGroupParentDict()
-
     print("---------------------Building Parm Templates-------------------------")
     BuildParmTemplateHeirarchy(groupParentDict, this_node)
     print("---------------------Generating Gun Parts----------------------------")
     genGunPartNodes(geoContainer, this_node)
-    print("---------------------Setting Layer Names-----------------------------")
-    #SetValidLayerName(this_node, validPSDLayerNames)
-    print("---------------------Setting Gun Part Shape--------------------------")
-    #for psdAsset in gunPartList:
-        #psdAsset.setValidLayerName()
-        #psdAsset.setShapeType()
+
 
 
 def BuildParmTemplateHeirarchy(groupParentDict, this_node):
@@ -78,7 +74,8 @@ def BuildParmTemplateHeirarchy(groupParentDict, this_node):
             if child.is_group() != True:
                 if fnmatch.fnmatch(child.name, "*SIDE*") or fnmatch.fnmatch(child.name, "*CUTOUT*"):
                     parentParmTemplate.addParmTemplate(buildParmTemplates(this_node, child.name))
-                    print("Parenting " + child.name + " Parms into " + parent.name + " ParmFolder")
+                    if debug:
+                        print("Parenting " + child.name + " Parms into " + parent.name + " ParmFolder")
         if parentParmTemplate != None:
             if parent.is_group:
                 containingFolder = groupParentDict[parent]
@@ -126,7 +123,8 @@ def getGroupParentDict():
             printParentList = ", ".join(flatParentList) + " ParmFolders" #Only for printing
         else:
             printParentList = "None" #Only for printing
-        print(parent.name + " ParmFolder's Ancestors are: " + printParentList)
+        if debug:
+            print(parent.name + " ParmFolder's Ancestors are: " + printParentList)
     if debug:
         print("DEBUG: Group Parent Dict  ( <Group> : Tuple of all Parents.name ) ")
         pprint.pprint(groupParentDict)

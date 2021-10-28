@@ -1,3 +1,5 @@
+from WPN_GENERATOR_PY import WPN_Utils
+
 import hou
 import fnmatch
 import pprint
@@ -85,7 +87,44 @@ class ChildAsset(object):
         self.nodeType = ""
         self.node = None
         self.parentContainerNode = self.parentObj.subnetContainerNode
-        self.parmFolder = None
+        self.parmSources = None
+        self.parmTargets = None
+        self.parentNode = hou.pwd()
+        self.parmSourceTargetDict = {}
+
+    def linkFile(self):
+        print("Linking File Parm")
+        fileParm = self.parentNode.parm("renamedFile")
+        self.node.parm("file").set(WPN_Utils.linkExpressionSTR(fileParm, force_evaluate = True, string = True))
+
+    def getParmsOfPrefix(self, node, parmPrefix):
+        print("Getting Parms in " + node.name() + " for " + parmPrefix)
+        return node.globParms(parmPrefix+"*")
+
+    def getParmSourceTargetDict(self, node, parmPrefix):
+        print("Getting ParmSourceTargetDict in " + node.name() + " for " + parmPrefix)
+        parmSourceTargetDict = {}
+        #parmNames = [ parmSource.name().split(parmPrefix+"_")[-1] for parmSource in self.parmSources]
+        parmSourceNames = [ parmSource.name() for parmSource in self.parmSources]
+        #print("parmName is:")
+        if debug:
+            pprint.pprint(parmSourceNames)
+        for parm in node.parms():
+            matchParmList = fnmatch.filter(parmSourceNames, "*" + parm.name())
+            if len(matchParmList)>0:
+                #print("matched" + matchParmList[0] + " with " + parm.name())
+                matchedParm = self.parentNode.parm(matchParmList[0])
+                parmSourceTargetDict[matchedParm] = parm
+        return parmSourceTargetDict
+
+
+
+    def linkParmSourcesToTargets(self):
+        print("Linking Parm Sources to Targets")
+        for source, target in self.parmSourceTargetDict.items():
+            if debug:
+                print("Linking " + source.name() + " to " + target.name())
+            target.setExpression(WPN_Utils.linkExpressionSTR(source))
 
 
 
@@ -102,9 +141,22 @@ class ChildAsset(object):
         return self.node
 
     def postNodeCreation(self):
-        pass
+        self.parmSources = self.getParmsOfPrefix(self.parentNode, self.name)
+        self.parmTargets = self.getParmsOfPrefix(self.node, self.name)
+        self.parmSourceTargetDict = self.getParmSourceTargetDict(self.node, self.name)
+        self.linkParmSourcesToTargets()
+        self.linkFile()
+        self.debug()
 
 
+    def debug(self):
+        if debug:
+            print("DEBUG: Parm Sources for " + self.name + " is:")
+            pprint.pprint(self.parmSources)
+            print("DEBUG: Parm Targets for " + self.name + " is:")
+            pprint.pprint(self.parmTargets)
+            print("DEBUG: ParmSourceTargetDict for " + self.name + " is:")
+            pprint.pprint(self.parmSourceTargetDict)
 
 
 

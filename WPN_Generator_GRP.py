@@ -17,7 +17,7 @@ from psd_tools.constants import Resource
 
 #GLOBALS
 GEO_CONTAINER = "GEO_CONTAINER"
-debug = False
+debug = True
 
 
 gunPartList = []   #Stores instances of generated gunparts
@@ -76,8 +76,7 @@ def BuildParmTemplateHeirarchy(groupParentDict, this_node):
         #Build Child Templates
         for child in children:
             if child.is_group() != True:
-                splitChildName = child.name.split("_")
-                if "SIDE" in splitChildName or "CUTOUT" in splitChildName:
+                if fnmatch.fnmatch(child.name, "*SIDE*") or fnmatch.fnmatch(child.name, "*CUTOUT*"):
                     parentParmTemplate.addParmTemplate(buildParmTemplates(this_node, child.name))
                     print("Parenting " + child.name + " Parms into " + parent.name + " ParmFolder")
         if parentParmTemplate != None:

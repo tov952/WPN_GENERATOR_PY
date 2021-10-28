@@ -13,16 +13,16 @@ def genGunpartParmTemplates(gunpartName):
     hou_parm_template4.setTags({"autoscope": "0000000000000000"})
     hou_parm_template3.addParmTemplate(hou_parm_template4)
     # Code for parameter template
-    hou_parm_template4 = hou.StringParmTemplate(gunpartName+"_layer_name1", "Layer Name", 1, default_value=([""]),
-                                                naming_scheme=hou.parmNamingScheme.Base1,
-                                                string_type=hou.stringParmType.Regular, menu_items=([]),
-                                                menu_labels=([]), icon_names=([]),
-                                                item_generator_script="opmenu -l -a GEO_CONTAINER/BRRL_CONTAINER/BRRL1 layer_name1",
-                                                item_generator_script_language=hou.scriptLanguage.Hscript,
-                                                menu_type=hou.menuType.StringReplace)
-    hou_parm_template4.setScriptCallbackLanguage(hou.scriptLanguage.Python)
-    hou_parm_template4.setTags({"autoscope": "0000000000000000", "script_callback_language": "python"})
-    hou_parm_template3.addParmTemplate(hou_parm_template4)
+    # hou_parm_template4 = hou.StringParmTemplate(gunpartName+"_layer_name1", "Layer Name", 1, default_value=([""]),
+    #                                             naming_scheme=hou.parmNamingScheme.Base1,
+    #                                             string_type=hou.stringParmType.Regular, menu_items=([]),
+    #                                             menu_labels=([]), icon_names=([]),
+    #                                             item_generator_script="opmenu -l -a GEO_CONTAINER/BRRL_CONTAINER/BRRL1 layer_name1",
+    #                                             item_generator_script_language=hou.scriptLanguage.Hscript,
+    #                                             menu_type=hou.menuType.StringReplace)
+    # hou_parm_template4.setScriptCallbackLanguage(hou.scriptLanguage.Python)
+    # hou_parm_template4.setTags({"autoscope": "0000000000000000", "script_callback_language": "python"})
+    # hou_parm_template3.addParmTemplate(hou_parm_template4)
     # Code for parameter template
     hou_parm_template4 = hou.FloatParmTemplate(gunpartName+"_thresh1", "Brightness Threshold", 1, default_value=([0.01]), min=0, max=1, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.Base1)
     hou_parm_template4.setTags({"autoscope": "0000000000000000"})

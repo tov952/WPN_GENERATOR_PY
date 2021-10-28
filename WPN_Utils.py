@@ -28,11 +28,12 @@ def getNoShapeSuffixName(name):
     return noShapeName
 
 
-def linkExpressionSTR(parmSource, force_evaluate=False, string=False):
+def linkExpressionSTR(parmSource, force_evaluate=False, string=False, replaceStr = ""):
+    parmSourceName = parmSource.name()
     ch = "ch"
     if force_evaluate == True:
         ch = "`ch"
     if string == True:
         ch += "s"
-    #print(ch + "('../../../" + parmSource + "')")
-    return ch + "('../../../" + parmSource + "')"
+    #print(ch + "('../../../" + parmSourceName + "')")
+    return ch + "('../../../" + parmSourceName + "')"

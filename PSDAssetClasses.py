@@ -91,12 +91,20 @@ class ChildAsset(object):
         self.parmTargets = None
         self.parentNode = hou.pwd()
         self.parmSourceTargetDict = {}
+        self.parmLayerDict = {}
+
+    def setLayerNameParms(self):
+        for parm, layer in self.parmLayerDict.items():
+            try:
+                self.node.parm(parm).set(layer.name)
+            except:
+                print("Skipping " +self.node.name()+ "'s " + parm + " assignment, as layer doesn't exist")
 
     def linkFile(self):
         if debug:
             print("DEBUG: Linking File Parm from: " + self.parentNode.name() + " to " + self.node.name())
         fileParm = self.parentNode.parm("renamedFile")
-        self.node.parm("file").set(WPN_Utils.linkExpressionSTR(fileParm, force_evaluate = True, string = True))
+        self.node.parm("file").set(WPN_Utils.linkExpressionParentParmToParm(fileParm, force_evaluate = True, string = True))
 
     def getParmsOfPrefix(self, node, parmPrefix):
         if debug:
@@ -130,7 +138,7 @@ class ChildAsset(object):
         for source, target in self.parmSourceTargetDict.items():
             if debug:
                 print("DEBUG: Linking " + source.name() + " to " + target.name())
-            target.setExpression(WPN_Utils.linkExpressionSTR(source))
+            target.setExpression(WPN_Utils.linkExpressionParentParmToParm(source))
 
 
 
@@ -152,6 +160,7 @@ class ChildAsset(object):
         self.parmSourceTargetDict = self.getParmSourceTargetDict(self.node, self.name)
         self.linkParmSourcesToTargets()
         self.linkFile()
+        self.setLayerNameParms()
         self.debug()
 
 

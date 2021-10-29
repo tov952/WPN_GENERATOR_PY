@@ -64,7 +64,7 @@ def BuildParmTemplateHeirarchy(groupParentDict, this_node):
         containingFolder = ()
         parmNames = [parm.name() for parm in this_node.parms()]
         if parent.name not in parmNames:
-            parentParmTemplate = buildParmTemplates(this_node, parent.name, Group=True)
+            parentParmTemplate = buildParmTemplates(this_node, parent.name, WPN_Enums.parmType.GROUP)
         else:
             i = parmNames.index(parent.name)
             parentParmTemplate = this_node.parms()[i].parmTemplate()
@@ -72,10 +72,12 @@ def BuildParmTemplateHeirarchy(groupParentDict, this_node):
         #Build Child Templates
         for child in children:
             if child.is_group() != True:
-                if fnmatch.fnmatch(child.name, "*SIDE*") or fnmatch.fnmatch(child.name, "*CUTOUT*"):
-                    parentParmTemplate.addParmTemplate(buildParmTemplates(this_node, child.name))
-                    if debug:
-                        print("Parenting " + child.name + " Parms into " + parent.name + " ParmFolder")
+                if fnmatch.fnmatch(child.name, "*SIDE*"):
+                    parentParmTemplate.addParmTemplate(buildParmTemplates(this_node, child.name, WPN_Enums.parmType.GUNPART))
+                elif fnmatch.fnmatch(child.name, "*CUTOUT*"):
+                    parentParmTemplate.addParmTemplate(buildParmTemplates(this_node, child.name, WPN_Enums.parmType.CUTOUT))
+                if debug:
+                    print("Parenting " + child.name + " Parms into " + parent.name + " ParmFolder")
         if parentParmTemplate != None:
             if parent.is_group:
                 containingFolder = groupParentDict[parent]
@@ -177,7 +179,7 @@ def genGunPartNodes(geoContainer, this_node):
         #gunPartNode = psdAsset.createGunpartNode()
         #gunPartList.append(psdAsset)
         #print(gunPartNode)
-        #gunPartNode.parm("file").set(WPN_Utils.linkExpressionSTR("file", True, True))
+        #gunPartNode.parm("file").set(WPN_Utils.linkExpressionParentParmToParm("file", True, True))
         #linkParms(this_node, gunPartNode, psdAsset.parmPrefix)
 
     # for gpType in gpTypes:
@@ -192,7 +194,7 @@ def genGunPartNodes(geoContainer, this_node):
     #             gunPartNode = psdAsset.createGunpartNode()
     #             gunPartList.append(psdAsset)
     #             #print(gunPartNode)
-    #             gunPartNode.parm("file").set(WPN_Utils.linkExpressionSTR("file", True, True))
+    #             gunPartNode.parm("file").set(WPN_Utils.linkExpressionParentParmToParm("file", True, True))
     #             linkParms(this_node, gunPartNode, psdAsset.parmPrefix)
 
     geoContainer.layoutChildren()
@@ -210,11 +212,14 @@ def SetMultiParmNums(layerNameCountDict, this_node):
         this_node.parm(multiParmName).set(value)
 
 
-def buildParmTemplates(this_node, layerName, Group = False):
-    if Group == True:
+def buildParmTemplates(this_node, layerName, parmType):
+    if parmType == 0:
         parmFolderTemplate = GPpT.genGunpartParentTemplates(layerName)
-    else:
+    elif parmType == 1:
         parmFolderTemplate = GPpT.genGunpartParmTemplates(layerName)
+    elif parmType == 2:
+        parmFolderTemplate = GPpT.genCutoutParmTemplates(layerName)
+
     # print(this_node.parms())
     return parmFolderTemplate
 
@@ -318,9 +323,9 @@ def linkParms(this_node, gunPartNode, gunPartPrefix):
         #print(parmTarget.parmTemplate().type())
         if parmTarget.parmTemplate().type() == hou.parmTemplateType.String:
             #print(parmTarget.parmTemplate().type)
-            parmTarget.set(WPN_Utils.linkExpressionSTR(parmSource.name(), True, True))
+            parmTarget.set(WPN_Utils.linkExpressionParentParmToParm(parmSource.name(), True, True))
         elif "crveShpProfile" in parmTarget.name():
             pass
         else:
-            parmTarget.setExpression(WPN_Utils.linkExpressionSTR(parmSource.name()))
+            parmTarget.setExpression(WPN_Utils.linkExpressionParentParmToParm(parmSource.name()))
     # print(gunPartParmsNameOnly)

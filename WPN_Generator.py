@@ -72,7 +72,7 @@ def genGunPartNodes(geoContainer, this_node):
                 gunPartNode = gunPart.createGunpartNode()
                 gunPartList.append(gunPart)
                 #print(gunPartNode)
-                gunPartNode.parm("file").set(WPN_Utils.linkExpressionSTR("file", True, True))
+                gunPartNode.parm("file").set(WPN_Utils.linkExpressionParentParmToParm("file", True, True))
                 linkParms(this_node, gunPartNode, gunPart.parmPrefix)
 
     geoContainer.layoutChildren()
@@ -164,9 +164,9 @@ def linkParms(this_node, gunPartNode, gunPartPrefix):
         #print(parmTarget.parmTemplate().type())
         if parmTarget.parmTemplate().type() == hou.parmTemplateType.String:
             #print(parmTarget.parmTemplate().type)
-            parmTarget.set(WPN_Utils.linkExpressionSTR(parmSource.name(), True, True))
+            parmTarget.set(WPN_Utils.linkExpressionParentParmToParm(parmSource.name(), True, True))
         elif "crveShpProfile" in parmTarget.name():
             pass
         else:
-            parmTarget.setExpression(WPN_Utils.linkExpressionSTR(parmSource.name()))
+            parmTarget.setExpression(WPN_Utils.linkExpressionParentParmToParm(parmSource.name()))
     # print(gunPartParmsNameOnly)

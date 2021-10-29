@@ -47,3 +47,8 @@ class shapeType(enum.Enum):
 
 shapeTypeNiceNames = {shapeType.C : "Cylindrical",
                       shapeType.F : "Flat"}
+
+class parmType(enum.IntEnum):
+    GROUP = 0
+    GUNPART = 1
+    CUTOUT = 2

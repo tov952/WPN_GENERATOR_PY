@@ -28,7 +28,18 @@ def getNoShapeSuffixName(name):
     return noShapeName
 
 
-def linkExpressionSTR(parmSource, force_evaluate=False, string=False, replaceStr = ""):
+# def linkExpressionNodeParmToParm(parmSource, force_evaluate=False, string=False, replaceStr = ""):
+#     parmSourcePath = parmsource.path()
+#     print("ParmSourcePath: " + parmSourcePath)
+#     ch = "ch"
+#     if force_evaluate == True:
+#         ch = "`ch"
+#     if string == True:
+#         ch += "s"
+#     #print(ch + "('../../../" + parmSourceName + "')")
+#     return ch + "('../../../" + parmSourceName + "')"
+
+def linkExpressionParentParmToParm(parmSource, force_evaluate=False, string=False, replaceStr =""):
     parmSourceName = parmSource.name()
     ch = "ch"
     if force_evaluate == True:

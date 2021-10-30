@@ -17,6 +17,7 @@ class Container(object):
         self.childAssetObjs = []
         self.subnetContainerNode = None
         self.directChildLayers = []
+        self.containerParent = self.PSDGroup.parent
 
         self.getDirectChildLayer()
 

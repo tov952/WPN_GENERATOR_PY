@@ -42,19 +42,29 @@ def rebuild(this_node):
     # Cleans Geo Container
     for child in geoContainer.children():
         child.destroy()
+
+
+
     if debug:
         print("---------------------Get Parent-Child Dict---------------------------")
     PCDict = getPSDGrpAndChildren(this_node)
     print("---------------------Saving Renamed PSDs-----------------------------")
     savedPSDPath = renameChildLayersAndSave(PCDict)
     savedPSD = PSDImage.open(savedPSDPath)
-    if debug:
-        print("---------------------Get Group:Parent Dict---------------------------")
-    groupParentDict = getGroupParentDict()
-    print("---------------------Building Parm Templates-------------------------")
-    BuildParmTemplateHeirarchy(groupParentDict, this_node)
-    print("---------------------Generating Gun Parts----------------------------")
-    genGunPartNodes(geoContainer, this_node)
+    createAssetObjs(this_node, savedPSD)
+    for gunPartContainer in gunPartContainerList:
+        # print("Gunpartcontainer name:" + gunPartContainer.name)
+        # pprint.pprint(gunPartContainer.childAssetObjs)
+        gunPartContainer.createContainer()
+        for childAsset in gunPartContainer.childAssetObjs:
+            childAsset.createNode()
+    # if debug:
+    #     print("---------------------Get Group:Parent Dict---------------------------")
+    # groupParentDict = getGroupParentDict()
+    # print("---------------------Building Parm Templates-------------------------")
+    # BuildParmTemplateHeirarchy(groupParentDict, this_node)
+    # print("---------------------Generating Gun Parts----------------------------")
+    # genGunPartNodes(geoContainer, this_node)
 
 
 
@@ -64,10 +74,14 @@ def BuildParmTemplateHeirarchy(groupParentDict, this_node):
         containingFolder = ()
         parmNames = [parm.name() for parm in this_node.parms()]
         if parent.name not in parmNames:
+            if debug:
+                print("Debug: No Parent! Making Parent!")
             parentParmTemplate = buildParmTemplates(this_node, parent.name, WPN_Enums.parmType.GROUP)
         else:
             i = parmNames.index(parent.name)
             parentParmTemplate = this_node.parms()[i].parmTemplate()
+            if debug:
+                print("Parent found: " + parentParmTemplate.name())
 
         #Build Child Templates
         for child in children:
@@ -153,10 +167,23 @@ def renameChildLayersAndSave(PCDict):
     (dirname, filename) = os.path.split(psdFilepath)
     (filename, ext) = os.path.splitext(filename)
     psdPath = dirname + "/" + filename + "_renamed" + ext
+
     for parent, children in PCDict.items():
+        newChildNameList = []
         for child in children:
+            parentList = getParentOfLayer(child)
+            cleanParentlist = removeNone(parentList)
+            flatParentList = flatten(cleanParentlist)
+            flatParentList.reverse()
+            pop = flatParentList.pop(0)
+            splitParentList = [ parentName.split("_") for parentName in flatParentList]
+            flatSplitParentlist = list(set(flatten(splitParentList)))
+            #print(flatSplitParentlist)
+            newChildNameList.append("_".join(flatSplitParentlist) + "_" + child.name)
+        #print(newChildNameList)
+        for i, child in enumerate(children):
             ogChildName = child.name
-            newChildName = parent.name + "_" + child.name
+            newChildName = newChildNameList[i]
             child.name = newChildName
             if debug:
                 print("DEBUG: Renaming " + ogChildName + " to " + newChildName)
@@ -225,7 +252,42 @@ def buildParmTemplates(this_node, layerName, parmType):
 
 
 
+def createAssetObjs(this_node, group):
+    print("Enter createAssetObjs")
+    for layer in group.descendants():
+        if layer.is_group():
+            group = layer
+            groupName = group.name
+            print(layer.name + " is group! Creating Container!")
+            gunPartContainer = psdAsset.Container(group)
+            gunPartContainerList.append(gunPartContainer)
 
+    for gunPartContainer in gunPartContainerList:
+        for childlayer in gunPartContainer.PSDGroup:
+            if not childlayer.is_group():
+                childlayerName = childlayer.name.split("_")[-1]
+                print("childlayerName is " + childlayerName)
+                childAsset = None
+                if childlayerName == "SIDE":
+                    print(childlayer.name + " is SIDE! Creating GunPartAsset")
+                    childAsset = wpnAsset.GunPartAsset(childlayer, gunPartContainer)
+                elif childlayerName == "CUTOUT":
+                    print(childlayer.name + " is CUTOUT! Creating CutoutAsset")
+                    childAsset = wpnAsset.CutoutAsset(childlayer, gunPartContainer)
+                if childAsset != None:
+                    gunPartContainer.childAssetObjs.append(childAsset)
+                else:
+                    print(layer.name + ": Not a BaseGeo ChildLayer!")
+
+            # else:
+            #     print(childlayer.name  + " is group! Creating Asset Objs!")
+            #     createAssetObjs(this_node, childlayer)
+
+
+    #     getChildOfLayer(layer)
+    # if debug:
+    #     print("DEBUG: ParentChildDict ( Parent <Group> : Child <Group>/<Layer> )")
+    #     pprint.pprint(parentChildDict)
 
 
 def getPSDGrpAndChildren(this_node):

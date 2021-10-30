@@ -10,7 +10,7 @@ imp.reload(psdAsset)
 gunPartHDAName = "WPN_GunPart_GRP"
 cutoutHDAName = "WPN_CutOut_GRP"
 
-debug = True
+debug = False
 
 
 class GunPartAsset(psdAsset.ChildAsset):
@@ -52,8 +52,8 @@ class GunPartAsset(psdAsset.ChildAsset):
         if debug:
             print("DEBUG: Finding Cutouts for :" + self.name)
         for layer in self.parentObj.PSDGroup.descendants():
-            print("Hue" + self.layerPrefix+"_CUTOUT*")
-            print("que? " + layer.name)
+            #print("Hue" + self.layerPrefix+"_CUTOUT*")
+            #print("que? " + layer.name)
             if fnmatch.fnmatch(layer.name, self.layerPrefix+"_CUTOUT*"):
                 if debug:
                     print("DEBUG: " + self.name + " Found " + layer.name)
@@ -64,12 +64,12 @@ class GunPartAsset(psdAsset.ChildAsset):
         if debug:
             print("DEBUG: " + self.name + " CutoutObjs is :")
             pprint.pprint(self.cutoutObjs)
-        if len(self.cutoutObjs) == 0:
-            print("No Cutout Objects Found!")
+        #if len(self.cutoutObjs) == 0:
+            #print("No Cutout Objects Found!")
 
 
     def linkCutoutObj(self):
-        print("DEBUG: Linking CutoutObj to " + self.name)
+        #print("DEBUG: Linking CutoutObj to " + self.name)
         for cutoutObj in self.cutoutObjs:
             cutoutObj.ObjToCutout = self
 

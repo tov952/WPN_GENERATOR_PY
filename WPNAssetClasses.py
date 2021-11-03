@@ -1,5 +1,6 @@
 from WPN_GENERATOR_PY import PSDAssetClasses as psdAsset
 from WPN_GENERATOR_PY import WPN_Utils
+
 import fnmatch
 import pprint
 import imp
@@ -7,8 +8,8 @@ import inspect
 from functools import wraps
 imp.reload(psdAsset)
 
-gunPartHDAName = "WPN_GunPart_GRP"
-cutoutHDAName = "WPN_CutOut_GRP"
+gunPartHDAName = "GUNPART_ASSET"
+cutoutHDAName = "CUTOUT_ASSET"
 
 debug = False
 
@@ -19,14 +20,14 @@ class GunPartAsset(psdAsset.ChildAsset):
         self.nodeType = gunPartHDAName
         self.frontLayer = self.setToSameDepthLayer(self.layerPrefix + "_FRONT")
         self.spineLayer = self.setToSameDepthLayer(self.layerPrefix + "_SPINE")
+        self.topLayer = self.setToSameDepthLayer(self.layerPrefix + "_TOP" )
         self.cylShape = self.setToSameDepthLayer(self.layerPrefix + "_CYL")
         self.cutoutObjs = []
 
-        self.getCutoutObjs()
-        self.linkCutoutObj()
 
         self.parmLayerDict = { "layer_name1": self.layer,
                           "FRONT_layer_name1": self.frontLayer,
+                          "TOP_layer_name1": self.topLayer,
                           "SPINE_layer_name1": self.spineLayer,
                           }
 
@@ -80,10 +81,26 @@ class GunPartAsset(psdAsset.ChildAsset):
 
     def setCarvedShape(self):
 
-        if self.frontLayer != None:
+        if self.frontLayer != None and self.topLayer != None:
             if debug:
-                print("DEBUG: Front Layer Exists! Setting Shape Profile to True")
+                print("DEBUG: Both Front and Top Layer Exists! Setting Shape Profile to Both")
+            self.node.parm("crveShp").set(3)
+        elif self.frontLayer != None:
+            if debug:
+                print("DEBUG: Front Layer Exists! Setting Shape Profile to FRONT")
             self.node.parm("crveShp").set(1)
+        elif self.frontLayer != None:
+            if debug:
+                print("DEBUG: Top Layer Exists! Setting Shape Profile to TOP")
+                self.node.parm("crveShp").set(2)
+
+    def setUseDrawnSpine(self):
+
+        if self.spineLayer != None:
+            if debug:
+                print("DEBUG: Spine Layer Exists! Setting Shape Profile to True")
+            self.node.parm("contourBased").set(1)
+            self.node.parm("useDrawnSpine").set(1)
 
     def setShape(self):
         if self.cylShape != None:
@@ -100,11 +117,11 @@ class GunPartAsset(psdAsset.ChildAsset):
 
     def postNodeCreation(self, *args, **kwargs):
         super( GunPartAsset, self).postNodeCreation(*args, **kwargs)
-        self.triggerCutoutObjLink()
         self.setLayerNameParms()
         self.setCarvedShape()
+        self.setUseDrawnSpine()
         self.setShape()
-        self.setCutoutPattern()
+
 
 
 

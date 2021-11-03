@@ -77,7 +77,14 @@ def genGunpartParmTemplates(gunpartName):
     hou_parm_template3 = hou.FolderParmTemplate("xShpCTRLs", "X-Axis Shape Controls", folder_type=hou.folderType.Simple, default_value=0, ends_tab_group=False)
     hou_parm_template3.setTags({"group_type": "simple"})
     # Code for parameter template
-    hou_parm_template4 = hou.ToggleParmTemplate(gunpartName+"_crveShp", "Carved Shape", default_value=False)
+    #hou_parm_template4 = hou.ToggleParmTemplate(gunpartName+"_crveShp", "Carved Shape", default_value=False)
+    hou_parm_template4 = hou.MenuParmTemplate(gunpartName+"_crveShp", "Carved Shape", menu_items=(["0", "1", "2", "3"]),
+                                             menu_labels=(["NONE", "FRONT", "TOP", "FRONT AND TOP"]), default_value=0,
+                                             icon_names=([]), item_generator_script="",
+                                             item_generator_script_language=hou.scriptLanguage.Python,
+                                             menu_type=hou.menuType.Normal, menu_use_token=False, is_button_strip=False,
+                                             strip_uses_icons=False)
+
     hou_parm_template4.setScriptCallbackLanguage(hou.scriptLanguage.Python)
     hou_parm_template4.setTags({"autoscope": "0000000000000000", "script_callback_language": "python"})
     hou_parm_template3.addParmTemplate(hou_parm_template4)

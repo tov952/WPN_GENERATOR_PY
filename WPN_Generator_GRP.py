@@ -58,6 +58,14 @@ def rebuild(this_node):
         gunPartContainer.createContainer()
         for childAsset in gunPartContainer.childAssetObjs:
             childAsset.createNode()
+        for childAsset in gunPartContainer.childAssetObjs:
+            try:
+                childAsset.getCutoutObjs()
+                childAsset.linkCutoutObj()
+                childAsset.triggerCutoutObjLink()
+                childAsset.setCutoutPattern()
+            except:
+                pass
     # if debug:
     #     print("---------------------Get Group:Parent Dict---------------------------")
     # groupParentDict = getGroupParentDict()

@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57f7654b-18b4-4055-b385-9f535a3bfb2d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/parmtemplatelib.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PSDAssetClasses.py" beforeDir="false" afterPath="$PROJECT_DIR$/PSDAssetClasses.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WPNAssetClasses.py" beforeDir="false" afterPath="$PROJECT_DIR$/WPNAssetClasses.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WPN_Generator_GRP.py" beforeDir="false" afterPath="$PROJECT_DIR$/WPN_Generator_GRP.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gunPartParmTemplatesGRP.py" beforeDir="false" afterPath="$PROJECT_DIR$/gunPartParmTemplatesGRP.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parmTemplates/create_gunpart_parm_template.py" beforeDir="false" afterPath="$PROJECT_DIR$/parmTemplates/create_gunpart_parm_template.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +140,8 @@
       <workItem from="1635175002483" duration="14973000" />
       <workItem from="1635354575902" duration="13196000" />
       <workItem from="1635515118673" duration="8604000" />
-      <workItem from="1635606163873" duration="8139000" />
+      <workItem from="1635606163873" duration="11215000" />
+      <workItem from="1635921862151" duration="15836000" />
     </task>
     <servers />
   </component>
@@ -190,6 +194,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1634990916806" />
+    <state x="607" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1635969262047">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="607" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1635969262047" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1635356733395">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

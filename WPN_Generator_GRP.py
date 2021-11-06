@@ -51,14 +51,17 @@ def rebuild(this_node):
     print("---------------------Saving Renamed PSDs-----------------------------")
     savedPSDPath = renameChildLayersAndSave(PCDict)
     savedPSD = PSDImage.open(savedPSDPath)
-    createAssetObjs(this_node, savedPSD)
-    for gunPartContainer in gunPartContainerList:
+    generator = psdAsset.Generator(savedPSD)
+    generator.genContainerObjs(wpnAsset.GunPartContainer)
+
+    for ContainerObj in generator.AllContainerObjs:
         # print("Gunpartcontainer name:" + gunPartContainer.name)
         # pprint.pprint(gunPartContainer.childAssetObjs)
-        gunPartContainer.createContainer()
-        for childAsset in gunPartContainer.childAssetObjs:
+        ContainerObj.createContainer()
+        for childAsset in ContainerObj.childAssetObjs:
             childAsset.createNode()
-        for childAsset in gunPartContainer.childAssetObjs:
+        for childAsset in ContainerObj.childAssetObjs:
+            print(childAsset.name + "_" + ContainerObj.name)
             try:
                 childAsset.getCutoutObjs()
                 childAsset.linkCutoutObj()
@@ -66,6 +69,9 @@ def rebuild(this_node):
                 childAsset.setCutoutPattern()
             except:
                 pass
+
+    for childAsset in generator.AllChildAssetsObjs:
+        childAsset.linkFactorParmMods()
     # if debug:
     #     print("---------------------Get Group:Parent Dict---------------------------")
     # groupParentDict = getGroupParentDict()
@@ -189,12 +195,36 @@ def renameChildLayersAndSave(PCDict):
             #print(flatSplitParentlist)
             newChildNameList.append("_".join(flatSplitParentlist) + "_" + child.name)
         #print(newChildNameList)
+        """Rename group first"""
         for i, child in enumerate(children):
-            ogChildName = child.name
-            newChildName = newChildNameList[i]
-            child.name = newChildName
-            if debug:
-                print("DEBUG: Renaming " + ogChildName + " to " + newChildName)
+            #print(child.parent.parent.name)
+            if child.is_group():
+                group = child
+                #print("child is group")
+                ogGroupName = group.name
+                newGroupName = newChildNameList[i]
+                group.name = newGroupName
+                print("DEBUG: Renaming " + ogGroupName + " to " + newGroupName)
+                for childLayer in group:
+                    print(childLayer)
+                    if not childLayer.is_group():
+                        ogChildName = childLayer.name
+                        newChildName = newGroupName + "_" + ogChildName
+                        childLayer.name = newChildName
+                        print("DEBUG: Renaming " + ogChildName + " to " + newChildName)
+            elif child.parent.parent.name == "Root":
+                ogChildName = child.name
+                newChildName = newChildNameList[i]
+                child.name = newChildName
+
+
+        # for child in children:
+        #     if not child.is_group():
+        #         ogChildName = child.name
+        #         newChildName = child.parent.name + "_" + ogChildName
+        #         print(child.parent.name)
+        #         child.name = newChildName
+        #         print("DEBUG: Renaming " + ogChildName + " to " + newChildName)
     psd.save(psdPath)
     print("Saved Renamed PSD into: " + psdPath)
     return psdPath
@@ -261,12 +291,12 @@ def buildParmTemplates(this_node, layerName, parmType):
 
 
 def createAssetObjs(this_node, group):
-    print("Enter createAssetObjs")
+    #print("Enter createAssetObjs")
     for layer in group.descendants():
         if layer.is_group():
             group = layer
             groupName = group.name
-            print(layer.name + " is group! Creating Container!")
+            #print(layer.name + " is group! Creating Container!")
             gunPartContainer = psdAsset.Container(group)
             gunPartContainerList.append(gunPartContainer)
 
@@ -274,18 +304,19 @@ def createAssetObjs(this_node, group):
         for childlayer in gunPartContainer.PSDGroup:
             if not childlayer.is_group():
                 childlayerName = childlayer.name.split("_")[-1]
-                print("childlayerName is " + childlayerName)
+                #print("childlayerName is " + childlayerName)
                 childAsset = None
                 if childlayerName == "SIDE":
-                    print(childlayer.name + " is SIDE! Creating GunPartAsset")
+                    #print(childlayer.name + " is SIDE! Creating GunPartAsset")
                     childAsset = wpnAsset.GunPartAsset(childlayer, gunPartContainer)
                 elif childlayerName == "CUTOUT":
-                    print(childlayer.name + " is CUTOUT! Creating CutoutAsset")
+                    #print(childlayer.name + " is CUTOUT! Creating CutoutAsset")
                     childAsset = wpnAsset.CutoutAsset(childlayer, gunPartContainer)
                 if childAsset != None:
                     gunPartContainer.childAssetObjs.append(childAsset)
                 else:
-                    print(layer.name + ": Not a BaseGeo ChildLayer!")
+                    pass
+                    #print(layer.name + ": Not a BaseGeo ChildLayer!")
 
             # else:
             #     print(childlayer.name  + " is group! Creating Asset Objs!")

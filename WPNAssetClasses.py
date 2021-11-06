@@ -14,6 +14,21 @@ cutoutHDAName = "CUTOUT_ASSET"
 debug = False
 
 
+
+class GunPartContainer(psdAsset.Container):
+    def childAssetDefinition(self, childLayerName, childlayer):
+        if childLayerName == "SIDE":
+            #print(childlayer.name + " is SIDE! Creating GunPartAsset")
+            childAsset = GunPartAsset(childlayer, self)
+        elif childLayerName == "CUTOUT":
+            #print(childlayer.name + " is CUTOUT! Creating CutoutAsset")
+            childAsset = CutoutAsset(childlayer, self)
+        else:
+            childAsset = None
+        return childAsset
+
+
+
 class GunPartAsset(psdAsset.ChildAsset):
     def __init__(self, *args, **kwargs):
         super( GunPartAsset, self).__init__(*args, **kwargs)
@@ -30,7 +45,8 @@ class GunPartAsset(psdAsset.ChildAsset):
                           "TOP_layer_name1": self.topLayer,
                           "SPINE_layer_name1": self.spineLayer,
                           }
-
+        self.flatParmMods = ["zThickness"]
+        self.parmModFactor = {"zThickness": 0.85} #Parms to mult modify (mult)
 
 
     def setToSameDepthLayer(self, layerName):

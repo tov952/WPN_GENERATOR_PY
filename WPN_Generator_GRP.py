@@ -58,20 +58,32 @@ def rebuild(this_node):
         # print("Gunpartcontainer name:" + gunPartContainer.name)
         # pprint.pprint(gunPartContainer.childAssetObjs)
         ContainerObj.createContainer()
-        for childAsset in ContainerObj.childAssetObjs:
-            childAsset.createNode()
-        for childAsset in ContainerObj.childAssetObjs:
-            print(childAsset.name + "_" + ContainerObj.name)
-            try:
-                childAsset.getCutoutObjs()
-                childAsset.linkCutoutObj()
-                childAsset.triggerCutoutObjLink()
-                childAsset.setCutoutPattern()
-            except:
-                pass
 
     for childAsset in generator.AllChildAssetsObjs:
+        childAsset.createNode()
+    for childAsset in generator.AllChildAssetsObjs:
+        #print(childAsset.name + "_" + ContainerObj.name)
+        try:
+            childAsset.getCutoutObjs()
+            childAsset.linkCutoutObj()
+            childAsset.triggerCutoutObjLink()
+            childAsset.setCutoutPattern()
+            childAsset.setParentObj()
+        except:
+            pass
+
+    for childAsset in generator.AllChildAssetsObjs:
+        childAsset.appendSelfToParent()
+
+
+    for childAsset in generator.AllChildAssetsObjs:
+        childAsset.setChildrenFactorParmNames()
+        childAsset.debugPrintParentChildObjs()
         childAsset.linkFactorParmMods()
+
+
+    # for childAsset in generator.AllChildAssetsObjs:
+    #     childAsset.linkFactorParmMods()
     # if debug:
     #     print("---------------------Get Group:Parent Dict---------------------------")
     # groupParentDict = getGroupParentDict()

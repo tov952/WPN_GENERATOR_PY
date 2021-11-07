@@ -48,3 +48,10 @@ def linkExpressionParentParmToParm(parmSource, force_evaluate=False, string=Fals
         ch += "s"
     #print(ch + "('../../../" + parmSourceName + "')")
     return ch + "('../../../" + parmSourceName + "')"
+
+def getlinkExpression(parmTarget, parmSource):
+    print("ParmSource: " + parmSource.name())
+    print("ParmTarget: " + parmTarget.name())
+    parmTarget.setExpression("")
+    parmTarget.set(parmSource)
+    return parmTarget.expression()

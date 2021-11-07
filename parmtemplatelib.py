@@ -88,7 +88,7 @@ def createPTG():
     hou_parm_template2.setConditional(hou.parmCondType.HideWhen, "{ shpSwitch != 1 }")
     hou_parm_template2.setTags({"group_type": "simple"})
     # Code for parameter template
-    hou_parm_template3 = hou.FloatParmTemplate("zThickness", "Z-Thickness", 1, default_value=([0.012]), min=-1, max=1, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.Base1)
+    hou_parm_template3 = hou.FloatParmTemplate("zThickness", "Z-Thickness", 1, default_value=([0]), min=-1, max=1, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.Base1)
     hou_parm_template3.setScriptCallbackLanguage(hou.scriptLanguage.Python)
     hou_parm_template3.setTags({"autoscope": "0000000000000000", "script_callback_language": "python"})
     hou_parm_template2.addParmTemplate(hou_parm_template3)
@@ -97,11 +97,6 @@ def createPTG():
     hou_parm_template2 = hou.MenuParmTemplate("crveShp", "Carved Shape", menu_items=(["0","1","2","3"]), menu_labels=(["NONE","FRONT","TOP","FRONT AND TOP"]), default_value=0, icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal, menu_use_token=False, is_button_strip=False, strip_uses_icons=False)
     hou_parm_template2.setScriptCallbackLanguage(hou.scriptLanguage.Python)
     hou_parm_template2.setTags({"autoscope": "0000000000000000", "script_callback_language": "python"})
-    hou_parm_template.addParmTemplate(hou_parm_template2)
-    # Code for parameter template
-    hou_parm_template2 = hou.FloatParmTemplate("newparameter", "HALLOO", 1, default_value=([0]), min=0, max=10, min_is_strict=False, max_is_strict=False, look=hou.parmLook.Regular, naming_scheme=hou.parmNamingScheme.Base1)
-    hou_parm_template2.setScriptCallbackLanguage(hou.scriptLanguage.Python)
-    hou_parm_template2.setTags({"script_callback_language": "python"})
     hou_parm_template.addParmTemplate(hou_parm_template2)
     # Code for parameter template
     hou_parm_template2 = hou.FolderParmTemplate("xShpCTRLs", "Cross-Section Controls", folder_type=hou.folderType.Simple, default_value=0, ends_tab_group=False)

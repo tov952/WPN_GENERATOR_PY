@@ -37,6 +37,11 @@ class Generator(object):
 
             self.AllChildAssetsObjs += container.childAssetObjs
 
+        self.postCreation()
+
+    def postCreation(self):
+        self.AllChildAssetsNames = [childAsset.name for childAsset in self.AllChildAssetsObjs]
+
 
 
 class Container(object):
@@ -49,17 +54,17 @@ class Container(object):
         self.subnetNodeName = self.PSDGroup.name +"_CONTAINER"
         self.childAssetObjs = []
         self.subnetContainerNode = None
-        self.directChildLayers = []
+        #self.directChildLayers = []
         self.containerParent = self.PSDGroup.parent
 
-        self.getDirectChildLayer()
+        #self.getDirectChildLayer()
 
-    def getDirectChildLayer(self):
-        for layer in self.PSDGroup:
-            self.directChildLayers.append(layer)
-        if debug:
-            print("DEBUG: DirectChildLayers of " +  self.PSDGroup.name)
-            pprint.pprint(self.directChildLayers)
+    # def getDirectChildLayer(self):
+    #     for layer in self.PSDGroup:
+    #         self.directChildLayers.append(layer)
+    #     if debug:
+    #         print("DEBUG: DirectChildLayers of " +  self.PSDGroup.name)
+    #         pprint.pprint(self.directChildLayers)
 
     def populateContainerWithChildAssets(self):
         for childAsset in self.childAssetObjs:
@@ -142,24 +147,47 @@ class ChildAsset(object):
         self.layer = layer
         self.name = self.layer.name
         self.layerPrefix = "_".join(self.name.split("_")[0:-1])
-        self.parentObj = containerObj
-        self.directParentLayer = self.layer.parent
+        self.layerSuffix = self.name.split("_")[-1]
+        self.containerObj = containerObj
+        self.parentLayer = self.layer.parent
+        self.parentObj = None
+        self.childObjs = []
+
 
         self.nodeType = ""
         self.node = None
-        self.parentContainerNode = self.parentObj.subnetContainerNode
+        self.parentContainerNode = self.containerObj.subnetContainerNode
         self.parmSources = None
         self.parmTargets = None
         self.parentNode = hou.pwd()
         self.parmSourceTargetDict = {}
         self.parmLayerDict = {}
         self.PTG = None
-        self.flatParmMods = []  #Parms to add modify (add)
+        self.flatParmMods = {}  #Parms to add modify (add)
         self.parmModFactor = {} #Parms to mult modify (mult)
-        self.factorParmNames = []
+        self.factorParmNames = {}
         self.flatParmTarget = {}
         self.masterGroup = self.setMasterGroup()
         self.directChildLayers = self.setDirectChildLayers()
+
+    def setParentObj(self):
+        #print("--------------set parent obj for " + self.name + "----------")
+        for i, childAssetName in enumerate(self.containerObj.generator.AllChildAssetsNames):
+            #print(childAssetName)
+            parentLayerName = self.layer.parent.parent.name + "_" + self.layerSuffix
+            #print(parentLayerName)
+            if fnmatch.fnmatch(childAssetName, parentLayerName ) :
+                #print("MATCH")
+                self.parentObj = self.containerObj.generator.AllChildAssetsObjs[i]
+                break
+        if self.parentObj != None:
+            print(self.name + " parent obj is " + self.parentObj.name)
+        else:
+            print(self.name + " parent obj is Root")
+        # if self.parentObj == None:
+        #     print(self.name + " parent obj is Root ")
+
+
 
     def setDirectChildLayers(self):
         directChildLayers = []
@@ -171,9 +199,31 @@ class ChildAsset(object):
                 directChildLayers.append(layer)
         return directChildLayers
 
+    def appendSelfToParent(self):
+        #if self.parentObj != self:
+        if self.parentObj != None:
+            print("Appending " + self.name + " to " + self.parentObj.name)
+            self.parentObj.childObjs.append(self)
+
+    def setChildrenFactorParmNames(self):
+        for child in self.childObjs:
+            child.factorParmNames = self.factorParmNames
+
+    def debugPrintParentChildObjs(self):
+        print("-------------------------")
+        print(self.name )
+        if self.parentObj != None:
+            print("Parent Objs: " + self.parentObj.name)
+        else:
+            print("Parent Objs: Root ")
+        print("Child Objs: ")
+        pprint.pprint( [o.name for o in self.childObjs])
+        print("-----------------------")
+
+
     def setMasterGroup(self):
-        #print(self.parentObj.containerParent.name)
-        if self.parentObj.containerParent.name == "Root":
+        #print(self.containerObj.containerParent.name)
+        if self.containerObj.containerParent.name == "Root":
             #print(self.layer.name + "is under a master Group")
             return True
 
@@ -222,22 +272,22 @@ class ChildAsset(object):
             modifierFolderName = modifierFolderPT.name()
             self.PTG.appendToFolder(overallCTRLFolderPT, modifierFolderPT)
             self.parentNode.setParmTemplateGroup(self.PTG, rename_conflicting_parms= True)
-            for parmToModName in self.flatParmMods:
+            for parmToModName, defaultValue in self.flatParmMods.items():
                 modifierFolder= self.PTG.find(modifierFolderName)
                 #print(modifierFolder)
                 parmTemplateToMod = self.PTG.find(self.name + "_" + parmToModName)
                 parmModName = parmTemplateToMod.name() + "_MOD"
                 self.flatParmTarget[parmModName] = parmToModName
                 parmTemplateToMod.setName(parmModName)
-                parmTemplateToMod.setDefaultValue((0,))
+                parmTemplateToMod.setDefaultValue((defaultValue,))
                 self.PTG.appendToFolder(modifierFolder, parmTemplateToMod)
             for parmToModName, factor in self.parmModFactor.items():
                 modifierFolder= self.PTG.find(modifierFolderName)
-                factorParmName = self.name + "_" + parmToModName + " FACTOR"
+                factorParmName = self.name + "_" + parmToModName + "_FACTOR"
                 factorParmLabel = parmToModName + " Factor"
                 factorPT = hou.FloatParmTemplate(factorParmName,factorParmLabel, 1, default_value=(factor,))
                 #print(modifierFolderPT.name())
-                self.factorParmNames.append(factorParmName)
+                self.factorParmNames[factorParmName] = parmToModName
                 self.PTG.appendToFolder(modifierFolder, factorPT)
             self.parentNode.setParmTemplateGroup(self.PTG, rename_conflicting_parms= True)
 
@@ -251,26 +301,42 @@ class ChildAsset(object):
             targetParm.setExpression(modTargetExpression)
 
     def linkFactorParmMods(self):
-        print("linking factor parm mods")
-        allChildAssetNames = [ childAsset.name for childAsset in self.parentObj.generator.AllChildAssetsObjs]
-        #print(allChildAssetNames)
-        for parmModName in self.factorParmNames:
+        print("linking factor parm mods for" + self.name)
+
+        for parmModName, parmTargetName in self.factorParmNames.items():
+            #print("gothere")
             sourceParm = self.parentNode.parm(parmModName)
-            for directChildLayer in self.directChildLayers:
-                #print("directchild" + directChildLayer.name)
-                matchedObjs = fnmatch.filter(allChildAssetNames, "*"+directChildLayer.name+"*")
-                #print("matchedObjs")
-                #print(matchedObjs)
-                for matchedObj in matchedObjs:
-                    #print(matchedObj)
-                    index = allChildAssetNames.index(matchedObj)
-                    node = self.parentObj.generator.AllChildAssetsObjs[index].node
-                    print(node)
-                    targetParm = node.parm(parmModName)
-                    print(targetParm)
-                    ogTargetExpression = targetParm.expression()
-                    modTargetExpression = ogTargetExpression + "*" + WPN_Utils.linkExpressionParentParmToParm(sourceParm)
-                    targetParm.setExpression(modTargetExpression)
+            for childObj in self.childObjs:
+                node = childObj.node
+                targetParm = node.parm(parmTargetName)
+                parmModBase = self.node.parm(parmTargetName)
+                ogTargetExpression = targetParm.expression()
+                parmModBaseExpr = WPN_Utils.getlinkExpression(targetParm, parmModBase)
+
+                modTargetExpression = ogTargetExpression + "+" + parmModBaseExpr + "*" + WPN_Utils.linkExpressionParentParmToParm(sourceParm)
+                targetParm.setExpression(modTargetExpression)
+                print("linked Parm Factors for " + self.name + " to " + childObj.name)
+            #print("--------------------------------------------------")
+            #print(self.name + " direct child layers in : " + parmModName)
+            #print(self.directChildLayers)
+            #print("-------------------------------------------------")
+            # for i in range(len(self.directChildLayers)):
+            #     print("Finding " + self.directChildLayers[i].name + "_" + self.layerSuffix )
+            #     #pprint.pprint(allChildAssetNames)
+            #     matchedObjs = fnmatch.filter(allChildAssetNames, self.directChildLayers[i].name + "_" + self.layerSuffix)
+            #
+            #     for matchedObj in matchedObjs:
+            #         index = allChildAssetNames.index(matchedObj)
+            #         asset = self.containerObj.generator.AllChildAssetsObjs[index]
+            #         node = asset.node
+            #         targetParm = node.parm(parmTargetName)
+            #         parmModBase = self.node.parm(parmTargetName)
+            #         ogTargetExpression = targetParm.expression()
+            #         parmModBaseExpr = WPN_Utils.getlinkExpression(targetParm, parmModBase)
+            #
+            #         modTargetExpression = ogTargetExpression + "+" + parmModBaseExpr + "*" + WPN_Utils.linkExpressionParentParmToParm(sourceParm)
+            #         targetParm.setExpression(modTargetExpression)
+            #         print("linked Parm Factors for " + self.name + " to " + asset.name)
 
         #pass
 
@@ -286,15 +352,15 @@ class ChildAsset(object):
 
     def createNode(self):
         if self.parentContainerNode == None:
-            self.parentContainerNode = self.parentObj.subnetContainerNode
-        #print(self.name + " ParentContainerNode is " + self.parentObj.name)
+            self.parentContainerNode = self.containerObj.subnetContainerNode
+        #print(self.name + " ParentContainerNode is " + self.containerObj.name)
         #input1 = self.parentContainerNode.indirectInputs()[0]
         #print("createNode")
         #print(self.layer.name)
         self.node = self.parentContainerNode.createNode(self.nodeType, self.layer.name)
         #self.node.setInput(0, input1)
         self.node.moveToGoodPosition()
-        #print("Created: " + self.node.name())
+        print("Created: " + self.node.name())
         self.postNodeCreation()
         return self.node
 

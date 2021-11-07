@@ -45,7 +45,7 @@ class GunPartAsset(psdAsset.ChildAsset):
                           "TOP_layer_name1": self.topLayer,
                           "SPINE_layer_name1": self.spineLayer,
                           }
-        self.flatParmMods = ["zThickness"]
+        self.flatParmMods = {"zThickness": 0.012}
         self.parmModFactor = {"zThickness": 0.85} #Parms to mult modify (mult)
 
 
@@ -53,7 +53,7 @@ class GunPartAsset(psdAsset.ChildAsset):
         if debug:
             print("DEBUG: Finding: " + layerName)
         foundLayer = None
-        for layer in self.parentObj.PSDGroup.descendants():
+        for layer in self.containerObj.PSDGroup.descendants():
             #print("parentObj.psdGroup :" + layer.name)
             if fnmatch.fnmatch(layer.name, layerName):
                 foundLayer = layer
@@ -68,13 +68,13 @@ class GunPartAsset(psdAsset.ChildAsset):
     def getCutoutObjs(self):
         if debug:
             print("DEBUG: Finding Cutouts for :" + self.name)
-        for layer in self.parentObj.PSDGroup.descendants():
+        for layer in self.containerObj.PSDGroup.descendants():
             #print("Hue" + self.layerPrefix+"_CUTOUT*")
             #print("que? " + layer.name)
             if fnmatch.fnmatch(layer.name, self.layerPrefix+"_CUTOUT*"):
                 if debug:
                     print("DEBUG: " + self.name + " Found " + layer.name)
-                for parentObjChild in self.parentObj.childAssetObjs:
+                for parentObjChild in self.containerObj.childAssetObjs:
                     if parentObjChild.layer.name == layer.name:
                         self.cutoutObjs.append(parentObjChild)
                         break

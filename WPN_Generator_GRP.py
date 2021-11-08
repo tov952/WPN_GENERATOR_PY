@@ -62,12 +62,12 @@ def rebuild(this_node):
     for childAsset in generator.AllChildAssetsObjs:
         childAsset.createNode()
     for childAsset in generator.AllChildAssetsObjs:
-        #print(childAsset.name + "_" + ContainerObj.name)
+        print(childAsset.name + "_" + ContainerObj.name)
         try:
-            childAsset.getCutoutObjs()
-            childAsset.linkCutoutObj()
-            childAsset.triggerCutoutObjLink()
-            childAsset.setCutoutPattern()
+        #     childAsset.getCutoutObjs()
+        #     childAsset.linkCutoutObj()
+        #     childAsset.triggerCutoutObjLink()
+        #     childAsset.setCutoutPattern()
             childAsset.setParentObj()
         except:
             pass
@@ -78,7 +78,7 @@ def rebuild(this_node):
 
     for childAsset in generator.AllChildAssetsObjs:
         childAsset.setChildrenFactorParmNames()
-        childAsset.debugPrintParentChildObjs()
+        #childAsset.debugPrintParentChildObjs()
         childAsset.linkFactorParmMods()
 
 

@@ -202,7 +202,7 @@ class ChildAsset(object):
     def appendSelfToParent(self):
         #if self.parentObj != self:
         if self.parentObj != None:
-            print("Appending " + self.name + " to " + self.parentObj.name)
+            #print("Appending " + self.name + " to " + self.parentObj.name)
             self.parentObj.childObjs.append(self)
 
     def setChildrenFactorParmNames(self):
@@ -301,7 +301,7 @@ class ChildAsset(object):
             targetParm.setExpression(modTargetExpression)
 
     def linkFactorParmMods(self):
-        print("linking factor parm mods for" + self.name)
+        #print("linking factor parm mods for" + self.name)
 
         for parmModName, parmTargetName in self.factorParmNames.items():
             #print("gothere")
@@ -315,7 +315,7 @@ class ChildAsset(object):
 
                 modTargetExpression = ogTargetExpression + "+" + parmModBaseExpr + "*" + WPN_Utils.linkExpressionParentParmToParm(sourceParm)
                 targetParm.setExpression(modTargetExpression)
-                print("linked Parm Factors for " + self.name + " to " + childObj.name)
+                #print("linked Parm Factors for " + self.name + " to " + childObj.name)
             #print("--------------------------------------------------")
             #print(self.name + " direct child layers in : " + parmModName)
             #print(self.directChildLayers)

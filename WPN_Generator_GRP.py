@@ -204,21 +204,16 @@ def renameChildLayersAndSave(PCDict):
             pop = flatParentList.pop(0)
             splitParentList = [ parentName.split("_") for parentName in flatParentList]
             flatSplitParentlist = list(set(flatten(splitParentList)))
-            #print(flatSplitParentlist)
             newChildNameList.append("_".join(flatSplitParentlist) + "_" + child.name)
-        #print(newChildNameList)
         """Rename group first"""
         for i, child in enumerate(children):
-            #print(child.parent.parent.name)
             if child.is_group():
                 group = child
-                #print("child is group")
                 ogGroupName = group.name
                 newGroupName = newChildNameList[i]
                 group.name = newGroupName
                 print("DEBUG: Renaming " + ogGroupName + " to " + newGroupName)
                 for childLayer in group:
-                    print(childLayer)
                     if not childLayer.is_group():
                         ogChildName = childLayer.name
                         newChildName = newGroupName + "_" + ogChildName
@@ -229,14 +224,6 @@ def renameChildLayersAndSave(PCDict):
                 newChildName = newChildNameList[i]
                 child.name = newChildName
 
-
-        # for child in children:
-        #     if not child.is_group():
-        #         ogChildName = child.name
-        #         newChildName = child.parent.name + "_" + ogChildName
-        #         print(child.parent.name)
-        #         child.name = newChildName
-        #         print("DEBUG: Renaming " + ogChildName + " to " + newChildName)
     psd.save(psdPath)
     print("Saved Renamed PSD into: " + psdPath)
     return psdPath

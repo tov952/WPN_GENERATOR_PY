@@ -10,6 +10,7 @@ imp.reload(psdAsset)
 
 gunPartHDAName = "GUNPART_ASSET"
 cutoutHDAName = "CUTOUT_ASSET"
+#addonHDAName  = "ADDON_ASSET"
 frontCutoutHDAName = "FRONT_CUTOUT_ASSET"
 
 debug = False
@@ -22,10 +23,13 @@ class GunPartContainer(psdAsset.Container):
             print(childlayer.name + " is SIDE! Creating GunPartAsset")
             childAsset = GunPartAsset(childlayer, self)
         elif fnmatch.fnmatch(childlayer.name, "*FRONT_CUTOUT*"):
-            print(childlayer.name + " is FRONT CUTOUT! Creating FrontCutoutAsset")
+            #print(childlayer.name + " is FRONT CUTOUT! Creating FrontCutoutAsset")
             childAsset = FrontCutoutAsset(childlayer, self)
+        elif fnmatch.fnmatch(childlayer.name, "*SIDE_ADDON*"):
+            #print(childlayer.name + " is CUTOUT! Creating CutoutAsset")
+            childAsset = AddonAsset(childlayer, self)
         elif fnmatch.fnmatch(childlayer.name, "*SIDE_CUTOUT*"):
-            print(childlayer.name + " is CUTOUT! Creating CutoutAsset")
+            #print(childlayer.name + " is CUTOUT! Creating CutoutAsset")
             childAsset = CutoutAsset(childlayer, self)
         else:
             childAsset = None
@@ -68,35 +72,6 @@ class GunPartAsset(psdAsset.ChildAsset):
             if debug:
                 print("No " + layerName + " layer found!" )
 
-
-    # def getCutoutObjs(self):
-    #     if debug:
-    #         print("DEBUG: Finding Cutouts for :" + self.name)
-    #     for layer in self.containerObj.PSDGroup.descendants():
-    #         #print("Hue" + self.layerPrefix+"_CUTOUT*")
-    #         #print("que? " + layer.name)
-    #         if fnmatch.fnmatch(layer.name, self.layerPrefix+"_CUTOUT*"):
-    #             if debug:
-    #                 print("DEBUG: " + self.name + " Found " + layer.name)
-    #             for parentObjChild in self.containerObj.childAssetObjs:
-    #                 if parentObjChild.layer.name == layer.name:
-    #                     self.cutoutObjs.append(parentObjChild)
-    #                     break
-    #     if debug:
-    #         print("DEBUG: " + self.name + " CutoutObjs is :")
-    #         pprint.pprint(self.cutoutObjs)
-    #     #if len(self.cutoutObjs) == 0:
-    #         #print("No Cutout Objects Found!")
-
-
-    # def linkCutoutObj(self):
-    #     #print("DEBUG: Linking CutoutObj to " + self.name)
-    #     for cutoutObj in self.cutoutObjs:
-    #         cutoutObj.ObjToCutout = self
-
-    # def triggerCutoutObjLink(self):
-    #     for cutoutObj in self.cutoutObjs:
-    #         cutoutObj.linkCutoutParentThickness()
 
 
     def setCarvedShape(self):
@@ -153,33 +128,23 @@ class CutoutAsset(psdAsset.ChildAsset):
         super( CutoutAsset, self).__init__(*args, **kwargs)
         self.nodeType = cutoutHDAName
         self.parmLayerDict = { "layer_name1": self.layer}
-        #self.ObjToCutout = None
 
-    # def linkCutoutParentThickness(self):
-    #     print("Linking parent thickness of " + self.name )
-    #     print(self.ObjToCutout.name)
-    #     thicknessParm = self.ObjToCutout.node.parm("zThickness")
-    #     self.node.parm("prntThickness").set(thicknessParm)
 
     def postNodeCreation(self, *args, **kwargs):
         super(CutoutAsset, self).postNodeCreation(*args, **kwargs)
         self.node.setDisplayFlag(False)
 
+class AddonAsset(CutoutAsset):
+    def __init__(self, *args, **kwargs):
+        super( AddonAsset, self).__init__(*args, **kwargs)
+        self.nodeType = cutoutHDAName
+        self.parmLayerDict = { "layer_name1": self.layer}
+
+
+
 class FrontCutoutAsset(CutoutAsset):
     def __init__(self, *args, **kwargs):
         super( FrontCutoutAsset, self).__init__(*args, **kwargs)
         self.nodeType = frontCutoutHDAName
-        #self.parmLayerDict = { "layer_name1": self.layer}
-        #self.ObjToCutout = None
-
-    # def linkCutoutParentThickness(self):
-    #     print("Linking parent thickness of " + self.name )
-    #     print(self.ObjToCutout.name)
-    #     thicknessParm = self.ObjToCutout.node.parm("zThickness")
-    #     self.node.parm("prntThickness").set(thicknessParm)
-
-    # def postNodeCreation(self, *args, **kwargs):
-    #     super(CutoutAsset, self).postNodeCreation(*args, **kwargs)
-    #     self.node.setDisplayFlag(False)
 
 

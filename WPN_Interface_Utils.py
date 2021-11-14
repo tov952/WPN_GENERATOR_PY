@@ -1,10 +1,39 @@
+
+from WPN_GENERATOR_PY import WPN_Generator_GRP as WPNGEN
+import imp
+import pprint
+parmValueDict = {}
+
 def empty(this_node):
     geoCon = this_node.node("GEO_CONTAINER")
     for child in geoCon.children():
         child.destroy()
     this_node.removeSpareParms()
 
+def saveParmValues(this_node):
+    global parmValueDict
+    for parm in this_node.spareParms():
+        #print("Saving:" + parm.name() + " : " + str(parm.eval()))
+        parmValueDict[parm.name()] = parm.eval()
+    #pprint.pprint(parmValueDict)
+
+def setParmValues(this_node):
+    global parmValueDict
+    #pprint.pprint(parmValueDict)
+    for parm in this_node.spareParms():
+        try:
+            #print("Setting " + parm.name() + " with :" + str(parmValueDict[parm.name()]))
+            parm.set(parmValueDict[parm.name()])
+        except:
+            pass
+            #print("skipping "+ parm.name() + " value set")
+    #this_node.setParms(parmValueDict)
+
+
 def reload(this_node):
+    imp.reload(WPNGEN)
+    PCDict = WPNGEN.getPSDGrpAndChildren(this_node)
+    WPNGEN.renameChildLayersAndSave(PCDict)
     geoCon = this_node.node("GEO_CONTAINER")
     containers = geoCon.glob("*_CONTAINER")
     for container in containers:

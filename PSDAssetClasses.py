@@ -7,6 +7,7 @@ import pathlib
 import imp
 
 
+
 debug = False
 
 class Generator(object):
@@ -16,6 +17,7 @@ class Generator(object):
         self.psd = PSD
         self.AllChildAssetsObjs = []
         self.AllContainerObjs = []
+        self.geoContainer =  self.setupGeoContainer()
 
 
     def genContainerObjs(self, containerClass):
@@ -31,11 +33,19 @@ class Generator(object):
                 self.AllContainerObjs.append(container)
         self.genContainerAssetObjs()
 
+    def setupGeoContainer(self):
+        geoContainer = self.node.node("GEO_CONTAINER")
+        geoContainer.createNode("null", "Root")
+        return geoContainer
+
     def genContainerAssetObjs(self):
         for container in self.AllContainerObjs:
             container.createAssetObjs()
             self.AllChildAssetsObjs += container.childAssetObjs
         self.postCreation()
+
+    def layoutGeoContainer(self):
+        self.geoContainer.layoutChildren()
 
     def postCreation(self):
         self.AllChildAssetsNames = [childAsset.name for childAsset in self.AllChildAssetsObjs]
@@ -52,7 +62,8 @@ class Container(object):
         self.subnetNodeName = self.PSDGroup.name +"_CONTAINER"
         self.childAssetObjs = []
         self.subnetContainerNode = None
-        self.containerParent = self.PSDGroup.parent
+        self.parent = self.PSDGroup.parent
+        self.parentContainerNode = None
 
 
     def populateContainerWithChildAssets(self):
@@ -87,15 +98,27 @@ class Container(object):
             print("childAssetObjs of "+ self.name)
             pprint.pprint(self.childAssetObjs)
 
+    def setParentGRPContainerInput(self):
+        if self.parentContainerNode != None:
+            self.subnetContainerNode.setInput(0, self.parentContainerNode)
+        else:
+            self.subnetContainerNode.setInput(0,self.generator.geoContainer.node("Root"))
+
+    def getParentContainerNode(self, geoCon):
+        if self.parent.name != "Root":
+            self.parentContainerNode = geoCon.node(self.parent.name + "_CONTAINER")
+            print("Found " + self.parent.name + "_CONTAINER for " + self.name)
+
 
     def createContainer(self):
-        HDA = hou.pwd()
-        geoContainer = HDA.node("GEO_CONTAINER")
+        geoContainer = self.generator.geoContainer
         self.subnetContainerNode = geoContainer.node(self.subnetNodeName)
         if self.subnetContainerNode == None:
             self.subnetContainerNode = geoContainer.createNode("geo", self.subnetNodeName)
             self.subnetContainerNode.moveToGoodPosition()
         print("Created: " + self.subnetNodeName)
+        self.getParentContainerNode(geoContainer)
+        self.setParentGRPContainerInput()
         return self.subnetContainerNode
 
     def createAssetObjs(self):
@@ -115,6 +138,7 @@ class Container(object):
         print(" No Child Asset Definition Logic!")
         return None
 
+"""TODO MAKE INTO ABSTRACT CLASS"""
 class ChildAsset(object):
 
     def __init__(self, layer, containerObj):
@@ -132,7 +156,7 @@ class ChildAsset(object):
         self.nodeType = ""
         self.node = None
         self.parentContainerNode = self.containerObj.subnetContainerNode
-        self.parmSources = None
+        self.parmSources = []
         self.parmTargets = None
         self.parentNode = hou.pwd()
         self.parmSourceTargetDict = {}
@@ -183,13 +207,13 @@ class ChildAsset(object):
             print("Parent Objs: " + self.parentObj.name)
         else:
             print("Parent Objs: Root ")
-        print("Child Objs: ")
-        pprint.pprint( [o.name for o in self.childObjs])
+        #print("Child Objs: ")
+        #pprint.pprint( [o.name for o in self.childObjs])
         print("-----------------------")
 
 
     def setMasterGroup(self):
-        if self.containerObj.containerParent.name == "Root":
+        if self.containerObj.parent.name == "Root":
             return True
 
     def setLayerNameParms(self):
@@ -216,7 +240,7 @@ class ChildAsset(object):
         parmSourceNames = [ parmSource.name() for parmSource in self.parmSources]
         if debug:
             print("Getting ParmSourceTargetDict in " + node.name() + " for " + parmPrefix)
-            pprint.pprint(parmSourceNames)
+        #pprint.pprint(parmSourceNames)
         for parm in node.parms():
             matchParmList = fnmatch.filter(parmSourceNames, "*" + parm.name())
             if len(matchParmList)>0:
@@ -297,7 +321,8 @@ class ChildAsset(object):
         return self.node
 
     def replicateParmsInHDA(self):
-        print("DEBUG: " + self.name + " Replicating Parms.")
+        if debug:
+            print("DEBUG: " + self.name + " Replicating Parms.")
         self.ptg = self.node.parmTemplateGroup()
         code = "import hou \n"
         code += self.ptg.asCode(function_name = "createPTG")
@@ -323,6 +348,10 @@ class ChildAsset(object):
                 advancedFolder = self.PTG.findFolder("Advanced")
                 self.PTG.appendToFolder(advancedFolder, parmTemplate)
                 self.recursiveSetParmPrefixAndConditionals(parmTemplate)
+
+                #self.parmSources = [ parmTemp for parmTemp in parmTemplate.parmTemplates()]
+
+
         self.parentNode.setParmTemplateGroup(self.PTG, rename_conflicting_parms= True)
 
     def recursiveSetParmPrefixAndConditionals(self, parmTemplate):
@@ -346,6 +375,8 @@ class ChildAsset(object):
                 renamedParmTemplate = self.PTG.find(parmTemplate.name())
                 renamedParmTemplate.setName(self.name + "_" + parmTemplate.name())
                 self.PTG.replace(parmTemplate.name(), renamedParmTemplate)
+                """Get parmSources only within this Asset"""
+                self.parmSources.append(renamedParmTemplate)
 
 
 
@@ -356,7 +387,7 @@ class ChildAsset(object):
     def postNodeCreation(self):
         self.replicateParmsInHDA()
         self.genOverallMods()
-        self.parmSources = self.getParmsOfPrefix(self.parentNode, self.name)
+        #self.parmSources = self.getParmsOfPrefix(self.parentNode, self.name)
         self.parmTargets = self.getParmsOfPrefix(self.node, self.name)
         self.parmSourceTargetDict = self.getParmSourceTargetDict(self.node, self.name)
         self.linkParmSourcesToTargets()

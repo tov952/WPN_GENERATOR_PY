@@ -62,7 +62,8 @@ def rebuild(this_node):
     for childAsset in generator.AllChildAssetsObjs:
         childAsset.createNode()
     for childAsset in generator.AllChildAssetsObjs:
-        print(childAsset.name + "_" + ContainerObj.name)
+        if debug:
+            print(childAsset.name + "_" + ContainerObj.name)
         try:
         #     childAsset.getCutoutObjs()
         #     childAsset.linkCutoutObj()
@@ -80,6 +81,8 @@ def rebuild(this_node):
         childAsset.setChildrenFactorParmNames()
         #childAsset.debugPrintParentChildObjs()
         childAsset.linkFactorParmMods()
+
+    generator.layoutGeoContainer()
 
 
     # for childAsset in generator.AllChildAssetsObjs:
@@ -197,14 +200,19 @@ def renameChildLayersAndSave(PCDict):
     for parent, children in PCDict.items():
         newChildNameList = []
         for child in children:
-            parentList = getParentOfLayer(child)
-            cleanParentlist = removeNone(parentList)
-            flatParentList = flatten(cleanParentlist)
-            flatParentList.reverse()
-            pop = flatParentList.pop(0)
-            splitParentList = [ parentName.split("_") for parentName in flatParentList]
-            flatSplitParentlist = list(set(flatten(splitParentList)))
-            newChildNameList.append("_".join(flatSplitParentlist) + "_" + child.name)
+            #print("child:" + child.name +  ".parent is: " + child.parent.name)
+            newChildNameList.append(child.parent.name + "_" + child.name)
+            # parentList = getParentOfLayer(child)
+            # print(parentList)
+            # cleanParentlist = removeNone(parentList)
+            # flatParentList = flatten(cleanParentlist)
+            # flatParentList.reverse()
+            # pop = flatParentList.pop(0)
+            # splitParentList = [ parentName.split("_") for parentName in flatParentList]
+            # #print(splitParentList)
+            # flatSplitParentlist = list(set(flatten(splitParentList)))
+            # #print(flatSplitParentlist)
+            # newChildNameList.append("_".join(flatSplitParentlist) + "_" + child.name)
         """Rename group first"""
         for i, child in enumerate(children):
             if child.is_group():
@@ -212,13 +220,15 @@ def renameChildLayersAndSave(PCDict):
                 ogGroupName = group.name
                 newGroupName = newChildNameList[i]
                 group.name = newGroupName
-                print("DEBUG: Renaming " + ogGroupName + " to " + newGroupName)
+                if debug:
+                    print("DEBUG: Renaming " + ogGroupName + " to " + newGroupName)
                 for childLayer in group:
                     if not childLayer.is_group():
                         ogChildName = childLayer.name
                         newChildName = newGroupName + "_" + ogChildName
                         childLayer.name = newChildName
-                        print("DEBUG: Renaming " + ogChildName + " to " + newChildName)
+                        if debug:
+                            print("DEBUG: Renaming " + ogChildName + " to " + newChildName)
             elif child.parent.parent.name == "Root":
                 ogChildName = child.name
                 newChildName = newChildNameList[i]

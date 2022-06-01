@@ -45,6 +45,8 @@ class GunPartAsset(psdAsset.ChildAsset):
         self.spineLayer = self.setToSameDepthLayer(self.layerPrefix + "_SPINE")
         self.topLayer = self.setToSameDepthLayer(self.layerPrefix + "_TOP" )
         self.cylShape = self.setToSameDepthLayer(self.layerPrefix + "_CYL")
+        self.thinPart = self.setToSameDepthLayer(self.layerPrefix + "_THIN")
+        self.exclParentCutout = self.setToSameDepthLayer(self.layerPrefix + "_EXCLUDE_PRNT_CUTOUT")
         self.cutoutObjs = []
 
 
@@ -102,6 +104,11 @@ class GunPartAsset(psdAsset.ChildAsset):
             if debug:
                 print("DEBUG: Cyl Layer Exists! Setting Shape Switch to Cylindrical")
             self.node.parm("shpSwitch").set(0)
+        elif self.thinPart != None:
+            if debug:
+                print("DEBUG: ThinPart Layer Exists! Setting Shape Switch to ThinPart")
+            self.node.parm("shpSwitch").set(2)
+
 
     def setCutoutPattern(self):
         if len(self.cutoutObjs) != 0:
@@ -110,12 +117,21 @@ class GunPartAsset(psdAsset.ChildAsset):
             CutoutPattern = ''.join([i for i in self.cutoutObjs[0].name if not i.isdigit()])+"*"
             self.node.parm("cutoutPattern").set(CutoutPattern)
 
+    def setExclude(self):
+        if self.exclParentCutout != None:
+            if debug:
+                print("DEBUG: Exclude Parent Cutouts Layer Exists! Toggle on excludeParentCutouts")
+            self.node.parm("excludeParentCutouts").set(1)
+            #print("set exclude parent cutouts")
+
     def postNodeCreation(self, *args, **kwargs):
         super( GunPartAsset, self).postNodeCreation(*args, **kwargs)
         self.setLayerNameParms()
         self.setCarvedShape()
         self.setUseDrawnSpine()
         self.setShape()
+        self.setExclude()
+        self.node.setDisplayFlag(True)
 
 
 

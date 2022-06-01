@@ -3,6 +3,18 @@ from WPN_GENERATOR_PY import WPN_Generator_GRP as WPNGEN
 import imp
 import pprint
 parmValueDict = {}
+import pyperclip
+
+
+def copyCTRLs(this_node):
+    print("Copying Controls")
+    saveParmValues(this_node)
+    #pprint.pprint(parmValueDict)
+
+def pasteCTRLs(this_node):
+    print("Pasting Controls")
+    setParmValues(this_node)
+
 
 def empty(this_node):
     geoCon = this_node.node("GEO_CONTAINER")
@@ -46,7 +58,7 @@ def setRamp(this_parm, this_node, targetNodePath):
     this_parmNameSplit = this_parm.name().split("_")
     this_parmPrefix = '_'.join(this_parmNameSplit[0:-1])
     targetParmName = this_parmNameSplit[-1]
-    print(targetNodePath)
+    #print(targetNodePath)
     targetNode = this_node.node(targetNodePath)
     target = targetNode.parm(targetParmName)
 

@@ -1,7 +1,7 @@
 def setParms(gunPartNode, targetValueDict):
     for targetParm, value in targetValueDict.items():
         gunPartNode.parm(targetParm).set(value)
-        print(targetParm + " set to " + str((value)))
+        #print(targetParm + " set to " + str((value)))
 
 
 def getAllGunPartNodes(this_node, validPSDLayerNames):
@@ -50,8 +50,8 @@ def linkExpressionParentParmToParm(parmSource, force_evaluate=False, string=Fals
     return ch + "('../../../" + parmSourceName + "')"
 
 def getlinkExpression(parmTarget, parmSource):
-    print("ParmSource: " + parmSource.name())
-    print("ParmTarget: " + parmTarget.name())
+    #print("ParmSource: " + parmSource.name())
+    #print("ParmTarget: " + parmTarget.name())
     parmTarget.setExpression("")
     parmTarget.set(parmSource)
     return parmTarget.expression()
